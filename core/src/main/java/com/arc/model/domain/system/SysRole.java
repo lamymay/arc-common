@@ -16,8 +16,8 @@ public class SysRole extends BaseModel {
     private static final long serialVersionUID = 1L;
 
     private Long id;// 自增id
-    private String roleName;// 角色名称
-    private Integer rootAdmin;// 是否系统管理员
+    private String name;// 角色名称
+    private Integer root;// 是否系统管理员
     private Integer state;// 状态
     private String note;// 备注 描述
     private Date createDate;// 创建时间
