@@ -2,7 +2,6 @@ package com.arc.utils.mine;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.util.Assert;
 
 import java.io.*;
 import java.net.URLEncoder;
@@ -221,9 +220,11 @@ public class FileUtil {
      * @throws IOException
      */
     public static int copy(InputStream in, OutputStream out) throws IOException {
-        Assert.notNull(in, "No InputStream specified");
-        Assert.notNull(out, "No OutputStream specified");
-
+        //Assert.notNull(in, "No InputStream specified");
+        //Assert.notNull(out, "No OutputStream specified");
+        if (in == null || out == null) {
+            throw new RuntimeException("输入输出流不可为null");
+        }
         int byteCount = 0;
         byte[] buffer = new byte[4096];
 
@@ -409,9 +410,14 @@ public class FileUtil {
     }
 
     public static String writeToDisk(InputStream inputStream, String outDir) {
+        if (outDir == null) {
+            throw new RuntimeException("outDir  must be not null ");
+        }
+        if (inputStream == null) {
+            throw new RuntimeException("inputStream  must be not null ");
+        }
         OutputStream outputStream = null;
         try {
-            Assert.notNull(outDir, "No OutputStream specified");
             File outFile = new File(outDir);
             log.debug("结果outFile.exists={}", outFile.exists());
             if (!outFile.exists()) {
@@ -420,9 +426,10 @@ public class FileUtil {
                 boolean newFile = outFile.createNewFile();
                 log.debug("文件写入文件夹{}，是否成功：{}", outFile.getParent(), newFile);
             }
+            if (outFile == null) {
+                throw new RuntimeException("outFile must be not null ");
+            }
             outputStream = new FileOutputStream(outFile);
-            Assert.notNull(inputStream, "No InputStream specified");
-            Assert.notNull(outFile, "No OutputStream specified");
             int byteCount = 0;
             byte[] buffer = new byte[4096];
             int bytesRead;

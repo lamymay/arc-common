@@ -9,7 +9,6 @@ import java.util.Random;
  * 得到中文首字母
  *
  */
-
 @Slf4j
 public class PingYinUtil {
 

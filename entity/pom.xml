@@ -3,23 +3,21 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <!--maven模块-->
-    <!-- 继承说明：这里继承SpringBoot提供的父工程 -->
+    <!-- 项目说明：这里作为聚合工程的父工程 -->
+    <groupId>com.arc</groupId>
+    <artifactId>entity</artifactId>
+    <!--<version>0.0.1-SNAPSHOT</version>-->
+    <name>entity</name>
+    <description>SpringBoot entity 块构：基本公共模块</description>
+    <packaging>jar</packaging>
+
+
     <parent>
         <groupId>com.arc</groupId>
         <artifactId>arc-common</artifactId>
         <version>0.0.1-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
-
-    <!-- 项目说明：这里作为聚合工程的父工程 -->
-    <groupId>com.arc</groupId>
-    <artifactId>util</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-
-    <name>util</name>
-    <description>SpringBoot util 块构：基本公共util模块</description>
-    <packaging>jar</packaging>
 
 
 </project>

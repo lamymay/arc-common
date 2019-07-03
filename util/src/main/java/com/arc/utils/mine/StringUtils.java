@@ -16,9 +16,48 @@ import java.util.regex.Pattern;
  * @since 2019/3/26 17:15
  */
 public class StringUtils {
+
     public static boolean isNull(String value) {
         return value != null && !"".equals(value.trim());
     }
+
+    // 仅unicode编码的字符串转换为普通字符串
+    public static String decodeUnicode(String dataStr) {
+        int start = 0;
+        int end = 0;
+        final StringBuffer buffer = new StringBuffer();
+        while (start > -1) {
+            end = dataStr.indexOf("\\u", start + 2);
+            String charStr = "";
+            if (end == -1) {
+                charStr = dataStr.substring(start + 2, dataStr.length());
+            } else {
+                charStr = dataStr.substring(start + 2, end);
+            }
+            char letter = (char) Integer.parseInt(charStr, 16); // 16进制parse整形字符串。
+            buffer.append(new Character(letter).toString());
+            start = end;
+        }
+        return buffer.toString();
+    }
+
+    private static String ascii2native(String asciicode) {
+        String[] asciis = asciicode.split("\\\\u");
+        String nativeValue = asciis[0];
+        try {
+            for (int i = 1; i < asciis.length; i++) {
+                String code = asciis[i];
+                nativeValue += (char) Integer.parseInt(code.substring(0, 4), 16);
+                if (code.length() > 4) {
+                    nativeValue += code.substring(4, code.length());
+                }
+            }
+        } catch (NumberFormatException e) {
+            return asciicode;
+        }
+        return nativeValue;
+    }
+
 
     public static String getOrderIdByUUId() {
         int hashCodeV = UUID.randomUUID().toString().hashCode();

@@ -6,6 +6,9 @@ import java.math.BigInteger;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
+/**
+ * @author X
+ */
 public class ObjectUtils {
     private static final String JAVAP = "java.";
     private static final String JAVADATESTR = "java.util.Date";

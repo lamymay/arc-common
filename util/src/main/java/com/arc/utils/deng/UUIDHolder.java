@@ -1,7 +1,6 @@
 package com.arc.utils.deng;
 
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.util.StringUtils;
 
 import java.util.UUID;
 
@@ -22,7 +21,10 @@ public final class UUIDHolder {
      */
     public static String get() {
         String uid = UUID_THREAD_HOLDER.get();
-        if (!StringUtils.isEmpty(uid)) return uid;
+        //if (!StringUtils.isEmpty(uid))
+        if (uid != null && uid.length() > 0) {
+            return uid;
+        }
         uid = create();
         return uid;
     }
