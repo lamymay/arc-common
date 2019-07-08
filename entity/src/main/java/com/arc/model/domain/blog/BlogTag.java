@@ -1,10 +1,11 @@
 package com.arc.model.domain.blog;
 
 
-import com.arc.model.domain.BaseModel;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+
+import java.io.Serializable;
 
 /**
  * 文章标签表，多对多
@@ -12,7 +13,7 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-public class BlogTag extends BaseModel {
+public class BlogTag implements Serializable {
 
     private static final long serialVersionUID = 1L;
 

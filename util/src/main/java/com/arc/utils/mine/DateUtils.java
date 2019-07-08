@@ -12,14 +12,15 @@ import java.util.GregorianCalendar;
 
 /**
  * 日期/时间工具类 该类定义一些常用的日期和时间格式
+ * 提供有关日期/时间的常用静态操作方法
  *
- * @description 提供有关日期/时间的常用静态操作方法
- * @author: yechao
- * @date: 2018/08/07 15:27
- * @version: V1.0
+ * @author yechao
+ * @version V1.0
+ * @date 2018/08/07 15:27
  */
 public class DateUtils {
     private static final Logger logger = LoggerFactory.getLogger(DateUtils.class);
+
     public enum TimeUnit {
         MILLI, SEC, MIN, HOUR, DAY
     }

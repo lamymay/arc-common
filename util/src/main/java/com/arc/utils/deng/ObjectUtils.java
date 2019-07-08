@@ -44,11 +44,11 @@ public class ObjectUtils {
      */
     public static Map<String, String> objectToMapString(String timeFormatStr, Object obj, String... excludeFields) throws IllegalAccessException {
         Map<String, String> map = new HashMap<>();
-        if (excludeFields.length!=0){
+        if (excludeFields.length != 0) {
             List<String> list = Arrays.asList(excludeFields);
             objectTransfer(timeFormatStr, obj, map, list);
-        }else{
-            objectTransfer(timeFormatStr, obj, map,null);
+        } else {
+            objectTransfer(timeFormatStr, obj, map, null);
         }
         return map;
     }
@@ -64,22 +64,22 @@ public class ObjectUtils {
      * @throws IllegalAccessException
      */
     private static Map<String, String> objectTransfer(String timeFormatStr, Object obj, Map<String, String> map, List<String> excludeFields) throws IllegalAccessException {
-        boolean isExclude=false;
+        boolean isExclude = false;
         //默认字符串
         String formatStr = "YYYY-MM-dd HH:mm:ss";
         //设置格式化字符串
         if (timeFormatStr != null && !timeFormatStr.isEmpty()) {
             formatStr = timeFormatStr;
         }
-        if (excludeFields!=null){
-            isExclude=true;
+        if (excludeFields != null) {
+            isExclude = true;
         }
         Class<?> clazz = obj.getClass();
         //获取值
         for (Field field : clazz.getDeclaredFields()) {
             String fieldName = clazz.getSimpleName() + "." + field.getName();
             //判断是不是需要跳过某个属性
-            if (isExclude&&excludeFields.contains(fieldName)){
+            if (isExclude && excludeFields.contains(fieldName)) {
                 continue;
             }
             //设置属性可以被访问
@@ -100,15 +100,16 @@ public class ObjectUtils {
                     map.put(fieldName, value.toString());
                 }
             } else {
-                objectTransfer(timeFormatStr, value, map,excludeFields);
+                objectTransfer(timeFormatStr, value, map, excludeFields);
             }
         }
         return map;
     }
+
     /**
-     * @Title: objectConvertBigDecimal
-     * @Description: Object类型的数字转BigDecimal
-     * @author: ZXM
+     * Object类型的数字转BigDecimal
+     * objectConvertBigDecimal
+     *
      * @param value
      * @return
      */

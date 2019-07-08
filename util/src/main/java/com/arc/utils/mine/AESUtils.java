@@ -9,7 +9,7 @@ import java.util.Base64;
 /**
  * 对称加解密工具类
  *
- * @author dengqianyong
+ * @author d
  */
 public class AESUtils {
 
@@ -64,7 +64,7 @@ public class AESUtils {
      * @throws Exception
      */
     public static void main(String[] args) throws Exception {
-        String content = "{\"id\":10000001,\"targetNumber\":\"15921410891\",\"content\":\"hello world\",\"soucreUuid\":\"abcdefg\"}";
+        String content = "{\"id\":10000001,\"targetNumber\":\"15921410891\",\"content\":\"hello world\",\"Uuid\":\"abcdefg\"}";
         System.out.println("加密前：" + content);
 
         String encryptResult = encrypt(content, "123456");

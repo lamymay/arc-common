@@ -7,7 +7,6 @@ import java.util.Map;
 
 /**
  * 根据确定的值构造Json和Map
- * @author lixinjie
  * @since 2017-09-24
  */
 public class JsonBuilder {

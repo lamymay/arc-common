@@ -13,7 +13,6 @@
 ///**
 // * Jackson工具类
 // *
-// * @author suddev
 // * @create 2017-11-25 2:18 PM
 // **/
 //public class JsonUtil {

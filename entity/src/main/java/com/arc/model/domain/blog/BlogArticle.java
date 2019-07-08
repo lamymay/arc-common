@@ -1,10 +1,10 @@
 package com.arc.model.domain.blog;
 
-import com.arc.model.domain.BaseModel;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
@@ -16,7 +16,7 @@ import java.util.Date;
 @Getter
 @Setter
 @ToString
-public class BlogArticle extends BaseModel {
+public class BlogArticle implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
