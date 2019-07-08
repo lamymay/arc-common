@@ -4,11 +4,11 @@ package com.arc.enums.system;
 /**
  * 内部错误码
  * 规定一定范围是一类错误，如：
- * 0001-0999 服务中的一些系统级别的异常
- * 1000-1999 business中的错误
- * 2000-2999 数据库操作级别的异常
+ * 0001-0999 服务中的一些系统级别的异常【重大错误】
+ * 1000-1999 业务中的非特定错误【运行中的普通错误】
+ * 2000-2999 数据库操作级别的异常【db错误】
  * 3000-3999
- * 4000-4999 BPM流程相关异常
+ * 4000-4999 流程相关异常
  * ...
  * 9000-9998
  * <p>
@@ -20,14 +20,15 @@ package com.arc.enums.system;
  * @author 叶超
  * @since 2018/04/10
  */
-public enum ProjectCode {
+public enum ProjectCodeEnum {
     //=====================================================
     //  3个特殊状态
     //=====================================================
 
-    UNKNOWN(-1, "未知"),
+    FAILURE(-1, "失败"),
     SUCCESS(1, "成功"),
-    FAILURE(0, "失败"),
+    UNKNOWN(0, "未知"),
+    NULL(2, "NULL"),
 
 
     //=====================================================
@@ -46,19 +47,13 @@ public enum ProjectCode {
 
 
     //=====================================================
-    // 1000-1999    非特定业务中的  错误
+    // 1000-1999    业务中的非特定错误
     //=====================================================
 
     LOGIN_ERROR(1000, "账号或者密码错误请重新登录!"),
     LOGIN_ERROR_JWT(1000, "请重新登录,HTTP请求头参数缺少Authorization信息。Missing or invalid Authorization header!"),
-
     LOGIN_ERROR_TOKEN_FALSIFY(1000, "请重新登录,伪造签名。Authorization token is falsified  !"),
-
-
-    /**
-     * jwt的token错误
-     */
-    JWT_TOKEN_ERROR(5, "不可用的签名，token失效请重新登录！"),
+    JWT_TOKEN_ERROR(5, "签名不可用，原因：token失效请重新登录！"),
 
 
     //0001到0010 预留10个微服务的code
@@ -286,7 +281,7 @@ public enum ProjectCode {
      */
     private String msg;
 
-    ProjectCode(int code, String msg) {
+    ProjectCodeEnum(int code, String msg) {
         this.code = code;
         this.msg = msg;
     }
