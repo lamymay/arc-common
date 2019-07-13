@@ -1,4 +1,4 @@
-//package com.arc.config.configurations;
+//package com.arc.configurations;
 //
 //import org.springframework.context.annotation.Bean;
 //import org.springframework.context.annotation.Configuration;

@@ -1,6 +1,6 @@
 //package com.arc.config.annotations;
 //
-//import com.arc.config.configurations.Swagger2ApiConfiguration;
+//import com.arc.configurations.Swagger2ApiConfiguration;
 //import org.springframework.context.annotation.Import;
 //
 //import java.lang.annotation.*;

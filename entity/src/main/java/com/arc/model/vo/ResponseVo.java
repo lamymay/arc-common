@@ -177,4 +177,112 @@ public class ResponseVo<T> implements Serializable {
 //        return StringUtils.equals(response.getCode(), ProjectCodeEnum.SUCCESS.getCode()) ? ResponseVo.success(instance) : ResponseVo.failure(ProjectCodeEnum.buildFailure(response.getCode(), response.getMsg()));
 //    }
 
+
+    /**
+     * @param data
+     * @return
+     */
+    public static <T> ResponseVo<T> page(T data) {
+
+        ResponseVo responseVo = new ResponseVo();
+
+        responseVo.setData(data);
+        Page page = new Page();
+        responseVo.setPage(page);
+
+        //当前页
+        page.setCurrentPage(1);
+
+        //页面容量=一页显示多少
+        page.setPageSize(10);
+
+        //总页数
+        page.setTotalCount(100);
+
+
+        //	public Integer getStart(){
+        //		return (this.page-1)*this.rows;
+        //	}
+        return responseVo;
+    }
+
+    private Page page;
+
+    public static class Page implements Serializable {
+        private static final long serialVersionUID = -9015310768471855060L;
+        private Integer currentPage;
+        private Integer pageSize;
+        private Integer totalCount;
+        private Integer totalPage;
+
+        private Page() {
+            this.pageSize = 10;
+            this.totalPage = 0;
+        }
+
+        private Page(Integer currentPage, Integer pageSize, Integer totalCount) {
+            this.pageSize = 10;
+            this.totalPage = 0;
+            this.currentPage = currentPage;
+            this.pageSize = pageSize;
+            this.totalCount = totalCount;
+        }
+
+        public void setCurrentPage(Integer currentPage) {
+            this.currentPage = currentPage;
+        }
+
+        public void setPageSize(Integer pageSize) {
+            this.pageSize = pageSize;
+        }
+
+        public void setTotalCount(Integer totalCount) {
+            this.totalCount = totalCount;
+        }
+
+        public void setTotalPage(Integer totalPage) {
+            this.totalPage = totalPage;
+        }
+
+        public Integer getCurrentPage() {
+            return this.currentPage;
+        }
+
+        public Integer getPageSize() {
+            return this.pageSize;
+        }
+
+        public Integer getTotalCount() {
+            return this.totalCount;
+        }
+
+        public Integer getTotalPage() {
+            if (this.pageSize != null && this.pageSize > 0) {
+                if (this.totalCount % this.pageSize == 0) {
+                    this.totalPage = this.totalCount / this.pageSize;
+                } else {
+                    this.totalPage = this.totalCount / this.pageSize + 1;
+                }
+            }
+
+            return this.totalPage;
+        }
+
+    }
+
+    // @todo     下次再改！！！
+//    /**
+//     * 处理微服务的返回结果
+//     *
+//     * @param response
+//     * @param <T>
+//     * @return
+//     */
+//    public static <T> ResponseVo<T> buildResponse(MicroServiceResponse<T> response) {
+//        if (response == null) {
+//            throw new BusinessRuntimeException(ErrorCode.NULL_RESPONSE);
+//        }
+//        return StringUtils.equals(response.getCode(), ErrorCode.SUCCESS.getCode()) ? ResponseVo.success(response.getData()) : ResponseVo.failure(ErrorCode.buildFailure(response.getCode(), response.getMsg()));
+//    }
+
 }
