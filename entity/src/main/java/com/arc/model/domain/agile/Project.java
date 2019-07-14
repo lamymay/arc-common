@@ -23,7 +23,7 @@ public class Project extends BaseModel {
     private Long id;// 项目表ID
     private String code;// project code
     private String name;// 项目名称名称-128
-    private String description;// 说明[text]
+    private String description;// 说明[225]
     private Long authorId;// 作者ID
     private String authorName;// 作者名称
     private String url;// 地址
@@ -35,4 +35,8 @@ public class Project extends BaseModel {
     private String version;// 版本
     private Date createDate;// 创建时间
     private Date updateDate;// 更新时间
+
+    public static void main(String[] args) {
+
+    }
 }
