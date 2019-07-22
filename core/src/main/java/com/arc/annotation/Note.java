@@ -33,7 +33,7 @@ public @interface Note {
 //     *
 //     * @return
 //     */
-//    int priority();
+    int priority() default 1;
 
 //    /**
 //     * 【资源类型 枚举】（PART，LINK，ACTION）
