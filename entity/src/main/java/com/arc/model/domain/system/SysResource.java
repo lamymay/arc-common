@@ -3,19 +3,20 @@ package com.arc.model.domain.system;
 import com.arc.model.BaseModel;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 import java.util.Date;
 import java.util.Objects;
 
 /**
  *
- *
  */
 @Getter
 @Setter
+@ToString
 public class SysResource extends BaseModel {
 
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
     private Long id;// 主键
 
@@ -25,14 +26,33 @@ public class SysResource extends BaseModel {
 
     private String path;// 资源路径
 
-    private String method;// 请求方法（GET，POST，ALL）
+    private String method;// 请求方法（GET，POST...）
+
+    private int state;
+
+    private Integer priority;// 优先级
 
     private String note;// 备注
-    private Integer priority;// 优先级
-    private String type;// 资源类型（PART，LINK，ACTION）
-    private int state;
+
+    private String type;// 资源类型
+
     private Date createDate;// 创建时间
+
     private Date updateDate;// 修改时间
+
+    public SysResource() {
+    }
+
+    public SysResource(long id, String name, String path) {
+        this.id = id;
+        this.resourceName = name;
+        this.path = path;
+    }
+
+    public SysResource(String name, String path) {
+        this.resourceName = name;
+        this.path = path;
+    }
 
 
     @Override
