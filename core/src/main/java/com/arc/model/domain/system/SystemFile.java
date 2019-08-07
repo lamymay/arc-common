@@ -1,12 +1,12 @@
 package com.arc.model.domain.system;
 
 
+import com.arc.model.BaseModel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.io.Serializable;
 import java.util.Date;
 
 /**
@@ -16,7 +16,8 @@ import java.util.Date;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class SystemFile implements Serializable {
+public class SystemFile extends BaseModel {
+
     private static final long serialVersionUID = 1L;
 
     private Long id; //主键
@@ -28,7 +29,7 @@ public class SystemFile implements Serializable {
     private Date updateDate;//更新时间
 
 
-    public SystemFile(String url, String path, String name, String suffix) {
+    public SystemFile(String url, String path, String name, String suffix  ) {
         this.url = url;
         this.path = path;
         this.name = name;

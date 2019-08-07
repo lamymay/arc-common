@@ -1,12 +1,11 @@
 package com.arc.model.domain.system;
 
 
-import com.arc.model.BaseModel;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.math.BigInteger;
-import java.util.ArrayList;
+import java.io.Serializable;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 /**
@@ -16,7 +15,7 @@ import java.util.Date;
  */
 @Getter
 @Setter
-public class SysMenu extends BaseModel {
+public class SysMenu implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -33,33 +32,10 @@ public class SysMenu extends BaseModel {
     private String note;// 备注
     private Long systemId;// 适用系统的id（备用）
     private Date createDate;// 创建时间
-    private Date updateDate;// 更新时间
-//    private LocalDateTime updateDate;// 更新时间
+    private LocalDateTime updateDate;// 更新时间
 
     public static void main(String[] args) {
         System.out.println(System.currentTimeMillis());
-        ArrayList<Long> list1 = new ArrayList<>();
-        ArrayList<Long> list2 = new ArrayList<>();
-        ArrayList<BigInteger> list3 = new ArrayList<>();
-
-        list1.add(1000L);
-        list1.add(1001L);
-        list1.add(1002L);
-        list1.add(1003L);
-        list2.add(1002L);
-
-        for (Long b : list2) {
-            System.out.println(list1.contains(b));
-            for (Long a : list1) {
-                System.out.println(a==b);
-                System.out.println(a.equals(b));
-                System.out.println(a);
-                System.out.println(b);
-            }
-
-        }
-
-
     }
 
 }

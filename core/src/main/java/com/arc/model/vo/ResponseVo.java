@@ -1,6 +1,6 @@
 package com.arc.model.vo;
 
-import com.arc.enums.system.ProjectCodeEnum;
+import com.arc.enums.system.ProjectCode;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -45,9 +45,9 @@ public class ResponseVo<T> implements Serializable {
         this.data = data;
     }
 
-    public ResponseVo(ProjectCodeEnum projectCodeEnum) {
-        this.code = projectCodeEnum.getCode();
-        this.msg = projectCodeEnum.getMsg();
+    public ResponseVo(ProjectCode projectCode) {
+        this.code = projectCode.getCode();
+        this.msg = projectCode.getMsg();
         this.data = null;
     }
 
@@ -59,40 +59,40 @@ public class ResponseVo<T> implements Serializable {
 
     //success方法
     public static <T> ResponseVo<T> success() {
-        return new ResponseVo<T>(ProjectCodeEnum.SUCCESS.getCode(), ProjectCodeEnum.SUCCESS.getMsg(), null);
+        return new ResponseVo<T>(ProjectCode.SUCCESS.getCode(), ProjectCode.SUCCESS.getMsg(), null);
     }
 
     public static <T> ResponseVo<T> success(T data) {
-        return new ResponseVo<T>(ProjectCodeEnum.SUCCESS.getCode(), ProjectCodeEnum.SUCCESS.getMsg(), data);
+        return new ResponseVo<T>(ProjectCode.SUCCESS.getCode(), ProjectCode.SUCCESS.getMsg(), data);
     }
 
-    public static <T> ResponseVo<T> success(ProjectCodeEnum enumCode) {
+    public static <T> ResponseVo<T> success(ProjectCode enumCode) {
         return new ResponseVo<T>(enumCode.getCode(), enumCode.getMsg(), null);
     }
 
-    public static <T> ResponseVo<T> success(ProjectCodeEnum enumCode, T data) {
+    public static <T> ResponseVo<T> success(ProjectCode enumCode, T data) {
         return new ResponseVo<T>(enumCode.getCode(), enumCode.getMsg(), data);
     }
 
     //失败
-    public static <T> ResponseVo<T> failure(ProjectCodeEnum enumCode) {
+    public static <T> ResponseVo<T> failure(ProjectCode enumCode) {
         return new ResponseVo<T>(enumCode.getCode(), enumCode.getMsg(), null);
     }
 
     public static <T> ResponseVo<T> failure(T data) {
-        return new ResponseVo<T>(ProjectCodeEnum.FAILURE.getCode(), ProjectCodeEnum.FAILURE.getMsg(), data);
+        return new ResponseVo<T>(ProjectCode.FAILURE.getCode(), ProjectCode.FAILURE.getMsg(), data);
     }
 
-    public static <T> ResponseVo<T> failure(ProjectCodeEnum enumCode, T data) {
+    public static <T> ResponseVo<T> failure(ProjectCode enumCode, T data) {
         return new ResponseVo<T>(enumCode.getCode(), enumCode.getMsg(), data);
     }
 
     public static ResponseVo failure() {
-        return new ResponseVo(ProjectCodeEnum.FAILURE);
+        return new ResponseVo(ProjectCode.FAILURE);
     }
 
     public static ResponseVo failure(int code, String msg) {
-        return new ResponseVo(code, msg, ProjectCodeEnum.FAILURE);
+        return new ResponseVo(code, msg, ProjectCode.FAILURE);
     }
 
 //
@@ -105,9 +105,9 @@ public class ResponseVo<T> implements Serializable {
 //     */
 //    public static <T> ResponseVo<T> buildResponse(MicroServiceResponse<T> response) {
 //        if (response == null) {
-//            throw new BusinessRuntimeException(ProjectCodeEnum.NULL_RESPONSE);
+//            throw new BusinessRuntimeException(ProjectCode.NULL_RESPONSE);
 //        }
-//        return StringUtils.equals(response.getCode(), ProjectCodeEnum.SUCCESS.getCode()) ? ResponseVo.success(response.getData()) : ResponseVo.failure(ProjectCodeEnum.buildFailure(response.getCode(), response.getMsg()));
+//        return StringUtils.equals(response.getCode(), ProjectCode.SUCCESS.getCode()) ? ResponseVo.success(response.getData()) : ResponseVo.failure(ProjectCode.buildFailure(response.getCode(), response.getMsg()));
 //    }
 //
 //    /**
@@ -119,10 +119,10 @@ public class ResponseVo<T> implements Serializable {
 //     */
 //    public static <T> ResponseVo<T> convertResponse(MicroServiceResponse<?> response, Class<T> target) {
 //        if (response == null || target == null) {
-//            throw new BusinessRuntimeException(ProjectCodeEnum.NULL_RESPONSE);
+//            throw new BusinessRuntimeException(ProjectCode.NULL_RESPONSE);
 //        }
 //        T instance = BeanCopierUtil.copyBean(response.getData(), target);
-//        return StringUtils.equals(response.getCode(), ProjectCodeEnum.SUCCESS.getCode()) ? ResponseVo.success(instance) : ResponseVo.failure(ProjectCodeEnum.buildFailure(response.getCode(), response.getMsg()));
+//        return StringUtils.equals(response.getCode(), ProjectCode.SUCCESS.getCode()) ? ResponseVo.success(instance) : ResponseVo.failure(ProjectCode.buildFailure(response.getCode(), response.getMsg()));
 //    }
 //
 //    /**
@@ -134,17 +134,17 @@ public class ResponseVo<T> implements Serializable {
 //     */
 //    public static <T> ResponseVo<PageResponse<T>> convertPageResponse(MicroServiceResponse<? extends PageResponse> response, Class<T> target) {
 //        if (response == null || target == null) {
-//            throw new BusinessRuntimeException(ProjectCodeEnum.NULL_RESPONSE);
+//            throw new BusinessRuntimeException(ProjectCode.NULL_RESPONSE);
 //        }
 //        if (response.getData() == null) {
-//            throw new BusinessRuntimeException(ProjectCodeEnum.PAGE_NULL_RESPONSE);
+//            throw new BusinessRuntimeException(ProjectCode.PAGE_NULL_RESPONSE);
 //        }
 //        List<T> list = BeanCopierUtil.copyList(response.getData().getData(), target);
 //        PageResponse<T> instance = new PageResponse<>();
 //        instance.setData(list);
 //        instance.setTotalPages(response.getData().getTotalPages());
 //        instance.setTotalElements(response.getData().getTotalElements());
-//        return StringUtils.equals(response.getCode(), ProjectCodeEnum.SUCCESS.getCode()) ? ResponseVo.success(instance) : ResponseVo.failure(ProjectCodeEnum.buildFailure(response.getCode(), response.getMsg()));
+//        return StringUtils.equals(response.getCode(), ProjectCode.SUCCESS.getCode()) ? ResponseVo.success(instance) : ResponseVo.failure(ProjectCode.buildFailure(response.getCode(), response.getMsg()));
 //    }
 //
 //    /**
@@ -156,10 +156,10 @@ public class ResponseVo<T> implements Serializable {
 //     */
 //    public static <T> ResponseVo<List<T>> convertListResponse(MicroServiceResponse<? extends List> response, Class<T> target) {
 //        if (response == null || target == null) {
-//            throw new BusinessRuntimeException(ProjectCodeEnum.NULL_RESPONSE);
+//            throw new BusinessRuntimeException(ProjectCode.NULL_RESPONSE);
 //        }
 //        List<T> instance = BeanCopierUtil.copyList(response.getData(), target);
-//        return StringUtils.equals(response.getCode(), ProjectCodeEnum.SUCCESS.getCode()) ? ResponseVo.success(instance) : ResponseVo.failure(ProjectCodeEnum.buildFailure(response.getCode(), response.getMsg()));
+//        return StringUtils.equals(response.getCode(), ProjectCode.SUCCESS.getCode()) ? ResponseVo.success(instance) : ResponseVo.failure(ProjectCode.buildFailure(response.getCode(), response.getMsg()));
 //    }
 //
 //    /**
@@ -171,10 +171,10 @@ public class ResponseVo<T> implements Serializable {
 //     */
 //    public static <T> ResponseVo<List<T>> convertListResponse(MicroServiceResponse<? extends List> response, Class<T> target, Map<String, String> relation) {
 //        if (response == null || target == null) {
-//            throw new BusinessRuntimeException(ProjectCodeEnum.NULL_RESPONSE);
+//            throw new BusinessRuntimeException(ProjectCode.NULL_RESPONSE);
 //        }
 //        List<T> instance = BeanCopierUtil.copyList(response.getData(), target, relation);
-//        return StringUtils.equals(response.getCode(), ProjectCodeEnum.SUCCESS.getCode()) ? ResponseVo.success(instance) : ResponseVo.failure(ProjectCodeEnum.buildFailure(response.getCode(), response.getMsg()));
+//        return StringUtils.equals(response.getCode(), ProjectCode.SUCCESS.getCode()) ? ResponseVo.success(instance) : ResponseVo.failure(ProjectCode.buildFailure(response.getCode(), response.getMsg()));
 //    }
 
 }
