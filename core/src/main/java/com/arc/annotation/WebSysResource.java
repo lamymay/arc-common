@@ -1,4 +1,4 @@
-package com.arc.annotation;
+package com.arc.annotations;
 
 import com.arc.enums.system.ParentKey;
 import com.arc.enums.system.SysResourceType;
