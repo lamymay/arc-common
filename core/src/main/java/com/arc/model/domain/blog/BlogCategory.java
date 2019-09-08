@@ -9,11 +9,12 @@ import lombok.ToString;
 /**
  * 文章分类表
  *
+ * @author Z
  */
 @Getter
 @Setter
 @ToString
-public class BlogSort extends BaseModel {
+public class BlogCategory extends BaseModel {
 
 	private static final long serialVersionUID = 1L;
 
