@@ -5,7 +5,6 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.io.Serializable;
-import java.time.LocalDateTime;
 import java.util.Date;
 
 /**
@@ -32,7 +31,8 @@ public class SysMenu implements Serializable {
     private String note;// 备注
     private Long systemId;// 适用系统的id（备用）
     private Date createDate;// 创建时间
-    private LocalDateTime updateDate;// 更新时间
+    private Date updateDate;// 更新时间
+
 
     public static void main(String[] args) {
         System.out.println(System.currentTimeMillis());
