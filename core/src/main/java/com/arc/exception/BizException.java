@@ -32,6 +32,12 @@ public class BizException extends RuntimeException implements BaseException {
         this.msg = msg;
     }
 
+    public BizException(Exception e, ProjectCodeEnum projectCode) {
+        super(e);
+        this.code = projectCode.getCode();
+        this.msg = projectCode.getMsg();
+    }
+
     @Override
     public Integer getCode() {
         return this.code;

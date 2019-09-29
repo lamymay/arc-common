@@ -54,6 +54,7 @@ public enum ProjectCodeEnum {
     LOGIN_ERROR_JWT(1000, "请重新登录,HTTP请求头参数缺少Authorization信息。Missing or invalid Authorization header!"),
     LOGIN_ERROR_TOKEN_FALSIFY(1000, "请重新登录,伪造签名。Authorization token is falsified  !"),
     JWT_TOKEN_ERROR(5, "签名不可用，原因：token失效请重新登录！"),
+    BEAN_COPY_EXCEPTION(5, "bean拷贝异常，"),
 
 
     //0001到0010 预留10个微服务的code

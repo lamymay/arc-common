@@ -5,6 +5,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
+import java.util.List;
+
 /**
  * @author 叶超
  * @since 2019/9/1 21:43
@@ -15,7 +17,12 @@ import lombok.ToString;
 @NoArgsConstructor
 public class SysRoleRequest {
 
-    private Integer id;//主键
+    private Long id;//主键
     private String name;//名称
+
+    /**
+     * 资源的ids
+     */
+    private List<Long> resourceIds;
 
 }
