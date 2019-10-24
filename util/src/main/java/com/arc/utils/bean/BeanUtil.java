@@ -1,7 +1,7 @@
 package com.arc.utils.bean;
 
-import com.arc.enums.system.ProjectCodeEnum;
-import com.arc.exception.BizException;
+import com.arc.core.enums.system.ProjectCodeEnum;
+import com.arc.core.exception.BizException;
 import net.sf.cglib.beans.BeanCopier;
 import net.sf.cglib.beans.BeanGenerator;
 import net.sf.cglib.beans.BeanMap;
