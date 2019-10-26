@@ -12,18 +12,10 @@
     <name>arc-common</name>
     <description>公共</description>
 
-    <!-- 继承说明：这里继承SpringBoot提供的父工程 -->
-    <!--  <parent>
-          <groupId>com.arc</groupId>
-          <artifactId>ray</artifactId>
-          <version>0.0.1-SNAPSHOT</version>
-          <relativePath>../pom.xml</relativePath>
-      </parent>-->
 
     <!-- 模块说明：这里声明多个子模块 -->
     <modules>
         <module>core</module>
-        <!--<module>entity</module>-->
         <module>util</module>
     </modules>
 
@@ -35,11 +27,13 @@
         <relativePath/>
     </parent>
 
+<!--
     <dependencyManagement>
         <dependencies>
 
         </dependencies>
     </dependencyManagement>
+-->
 
 
     <dependencies>
@@ -59,7 +53,6 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.8</version>
             <scope>compile</scope>
         </dependency>
 
@@ -70,18 +63,6 @@
             <version>20180130</version>
         </dependency>
 
-        <!-- swagger RESTful API 文档 -->
-        <dependency>
-            <groupId>io.springfox</groupId>
-            <artifactId>springfox-swagger2</artifactId>
-            <version>2.9.2</version>
-        </dependency>
-        <!-- io.springfox/springfox-swagger-ui -->
-        <dependency>
-            <groupId>io.springfox</groupId>
-            <artifactId>springfox-swagger-ui</artifactId>
-            <version>2.9.2</version>
-        </dependency>
         <!--此外还需要一个依赖组件：-->
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
@@ -113,13 +94,13 @@
             <artifactId>gson</artifactId>
             <version>2.8.5</version>
         </dependency>
-        <!--sl4log-->
+<!--        &lt;!&ndash;sl4log&ndash;&gt;
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
             <version>1.7.25</version>
             <scope>compile</scope>
-        </dependency>
+        </dependency>-->
         <!--logging-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -132,12 +113,12 @@
             <artifactId>spring-boot-starter-aop</artifactId>
             <!--            <version>2.1.5.RELEASE</version>-->
         </dependency>
-        <!--mongodb-->
-        <dependency>
-            <groupId>org.springframework.data</groupId>
-            <artifactId>spring-data-mongodb</artifactId>
-            <!--            <version>2.1.5.RELEASE</version>-->
-        </dependency>
+        <!--        &lt;!&ndash;mongodb&ndash;&gt;
+                <dependency>
+                    <groupId>org.springframework.data</groupId>
+                    <artifactId>spring-data-mongodb</artifactId>
+                    &lt;!&ndash;            <version>2.1.5.RELEASE</version>&ndash;&gt;
+                </dependency>-->
         <!--  springboot整合 redis -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
