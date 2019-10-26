@@ -179,11 +179,11 @@ public class FileUtil {
      * @return 获取时间戳，精度到毫秒并拼接上随机数
      */
     public static String getSimpleCode() {
-        StringBuffer stringBuffer = new StringBuffer();
+        StringBuilder sb = new StringBuilder();
         String time = new SimpleDateFormat("yyyyMMddHHmmssSSS").format(new Date());
         int x = (int) (Math.random() * 900) + 1000;
-        stringBuffer.append(time).append(x);
-        return stringBuffer.toString();
+        sb.append(time).append(x);
+        return sb.toString();
     }
 
 
@@ -200,7 +200,7 @@ public class FileUtil {
      */
     public static String getTargetFileName(String sourceFileName) {
         //时间戳+uuid+sourceFileName
-        return System.currentTimeMillis() + getUUID() + EXTENSION_UNDERLINE + sourceFileName;
+        return sourceFileName + System.currentTimeMillis() + getUUID() + EXTENSION_UNDERLINE;
     }
 
     /**
