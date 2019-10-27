@@ -109,6 +109,8 @@ public class FileUtil {
      */
     public static final char EXTENSION_UNDERLINE = '_';
 
+    public static final String EXTENSION_UNDERLINE_STRING = "_";
+
     /**
      * 找不到，坐标溢出
      */
@@ -199,8 +201,17 @@ public class FileUtil {
      * @return 唯一目标文件名称
      */
     public static String getTargetFileName(String sourceFileName) {
-        //时间戳+uuid+sourceFileName
-        return sourceFileName + System.currentTimeMillis() + getUUID() + EXTENSION_UNDERLINE;
+        //sourceFileName+时间戳+uuid+.suffix
+
+        //截取文件后缀
+        int lastIndexOf = sourceFileName.lastIndexOf(EXTENSION_SEPARATOR);
+        String suffixWithPoint = "";
+        if (lastIndexOf != -1) {
+            suffixWithPoint = sourceFileName.substring(lastIndexOf, sourceFileName.length());
+            sourceFileName = sourceFileName.substring(0, lastIndexOf);
+        }
+
+        return sourceFileName + EXTENSION_UNDERLINE + System.currentTimeMillis() + getUUID() + suffixWithPoint;
     }
 
     /**
@@ -209,7 +220,7 @@ public class FileUtil {
      * @return
      */
     public static String getUUID() {
-        return UUID.randomUUID().toString().replace("-", "");
+        return UUID.randomUUID().toString().replace(EXTENSION_UNDERLINE_STRING, "");
     }
 
 
@@ -408,6 +419,14 @@ public class FileUtil {
         }
         return filename;
     }
+
+    /**
+     * 文件持久化到磁盘
+     *
+     * @param inputStream
+     * @param outDir
+     * @return
+     */
 
     public static String writeToDisk(InputStream inputStream, String outDir) {
         if (outDir == null) {
