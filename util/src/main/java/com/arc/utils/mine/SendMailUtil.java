@@ -76,17 +76,6 @@ public class SendMailUtil {
         }
     }
 
-    /**
-     * 发送模板邮件
-     *
-     * @param toMailAddr   收信人地址
-     * @param subject      email主题
-     * @param templatePath 模板地址
-     * @param map          模板map
-     */
-    public static void sendFtlMail(String toMailAddr, String subject, String templatePath, Map<String, Object> map) {
-    }
-
     private static String getFilePath() {
         String path = getAppPath(SendMailUtil.class);
         //gradle的原因导致路径不对所以把classes替换成了resources
@@ -166,9 +155,5 @@ public class SendMailUtil {
         return realPath;
     }
 
-
-    public static void main(String[] args) {
-
-    }
 
 }

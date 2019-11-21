@@ -50,7 +50,8 @@ public enum ProjectCodeEnum {
     // 1000-1999    业务中的非特定错误
     //=====================================================
 
-    LOGIN_ERROR(1000, "账号或者密码错误请重新登录!"),
+    LOGIN_ERROR(1000, "登录时失败，原因：账号或者密码错误请重新登录!"),
+    LOGIN_USER_NOT_EXIST_ERROR(1001, "登录时失败，原因：用户不存在!"),
     LOGIN_ERROR_JWT(1000, "请重新登录,HTTP请求头参数缺少Authorization信息。Missing or invalid Authorization header!"),
     LOGIN_ERROR_TOKEN_FALSIFY(1000, "请重新登录,伪造签名。Authorization token is falsified  !"),
     JWT_TOKEN_ERROR(5, "签名不可用，原因：token失效请重新登录！"),
@@ -218,6 +219,8 @@ public enum ProjectCodeEnum {
 //
 
     FILE_OPERATE_ERROR(1100, "文件操作错误"),
+    ILLEGAL_FILE(1303, "非法文件，原因：文件为空或者格式无法处理，提示：选择我们提供的模板填入数据后上传，不要修改文件名"),
+
 
     UPLOAD_FAILURE(1101, "文件上传失败"),
 

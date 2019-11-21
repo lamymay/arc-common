@@ -112,6 +112,11 @@ public class FileUtil {
     public static final String EXTENSION_UNDERLINE_STRING = "_";
 
     /**
+     * 减号
+     */
+    public static final String MINUS_SIGN = "-";
+
+    /**
      * 找不到，坐标溢出
      */
     private static final int NOT_FOUND = -1;
@@ -220,7 +225,7 @@ public class FileUtil {
      * @return
      */
     public static String getUUID() {
-        return UUID.randomUUID().toString().replace(EXTENSION_UNDERLINE_STRING, "");
+        return UUID.randomUUID().toString().replaceAll(MINUS_SIGN, "");
     }
 
 
