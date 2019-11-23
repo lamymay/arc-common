@@ -4,6 +4,7 @@ import com.arc.core.enums.system.ProjectCodeEnum;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import org.springframework.http.ResponseEntity;
 
 import java.io.Serializable;
 
@@ -17,7 +18,10 @@ import java.io.Serializable;
 @Getter
 @Setter
 @ToString
-public class ResponseVo<T> implements Serializable {
+public class ResponseVo<T>
+        //extends ResponseEntity
+        implements Serializable {
+
 
     private static final long serialVersionUID = 1L;
 
@@ -93,6 +97,11 @@ public class ResponseVo<T> implements Serializable {
 
     public static ResponseVo failure(int code, String msg) {
         return new ResponseVo(code, msg, ProjectCodeEnum.FAILURE);
+    }
+
+    public static <T> ResponseEntity<ResponseVo<T>> ok(T data) {
+        ResponseVo<T> responseVo = new ResponseVo<>(ProjectCodeEnum.SUCCESS.getCode(), ProjectCodeEnum.SUCCESS.getMsg(), data);
+    return ResponseEntity.ok(responseVo);
     }
 
 //
