@@ -4,6 +4,7 @@ import com.arc.core.enums.system.ProjectCodeEnum;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
 import java.io.Serializable;
@@ -18,7 +19,9 @@ import java.io.Serializable;
 @Getter
 @Setter
 @ToString
-public class ResponseVo<T>        implements Serializable {
+public class ResponseVo2<T>
+        extends ResponseEntity
+        implements Serializable {
 
 
     private static final long serialVersionUID = 1L;
@@ -40,61 +43,65 @@ public class ResponseVo<T>        implements Serializable {
     private T data;
 
     //构造器
-    public ResponseVo() {
+    public ResponseVo2() {
+        super(HttpStatus.OK);
     }
 
-    public ResponseVo(T data) {
+    public ResponseVo2(T data) {
+        super(HttpStatus.OK);
         this.data = data;
     }
 
-    public ResponseVo(ProjectCodeEnum projectCode) {
+    public ResponseVo2(ProjectCodeEnum projectCode) {
+        super(HttpStatus.OK);
         this.code = projectCode.getCode();
         this.msg = projectCode.getMsg();
         this.data = null;
     }
 
-    public ResponseVo(int code, String msg, T data) {
+    public ResponseVo2(int code, String msg, T data) {
+        super(HttpStatus.OK);
         this.code = code;
         this.msg = msg;
         this.data = data;
     }
 
     //success方法
-    public static <T> ResponseVo<T> success() {
-        return new ResponseVo<T>(ProjectCodeEnum.SUCCESS.getCode(), ProjectCodeEnum.SUCCESS.getMsg(), null);
+    public static <T> ResponseVo2<T> success() {
+        return new ResponseVo2<T>(ProjectCodeEnum.SUCCESS.getCode(), ProjectCodeEnum.SUCCESS.getMsg(), null);
     }
 
-    public static <T> ResponseVo<T> success(T data) {
-        return new ResponseVo<T>(ProjectCodeEnum.SUCCESS.getCode(), ProjectCodeEnum.SUCCESS.getMsg(), data);
+    public static <T> ResponseVo2<T> success(T data) {
+        return new ResponseVo2<T>(ProjectCodeEnum.SUCCESS.getCode(), ProjectCodeEnum.SUCCESS.getMsg(), data);
     }
 
-    public static <T> ResponseVo<T> success(ProjectCodeEnum enumCode) {
-        return new ResponseVo<T>(enumCode.getCode(), enumCode.getMsg(), null);
+    public static <T> ResponseVo2<T> success(ProjectCodeEnum enumCode) {
+        return new ResponseVo2<T>(enumCode.getCode(), enumCode.getMsg(), null);
     }
 
-    public static <T> ResponseVo<T> success(ProjectCodeEnum enumCode, T data) {
-        return new ResponseVo<T>(enumCode.getCode(), enumCode.getMsg(), data);
+    public static <T> ResponseVo2<T> success(ProjectCodeEnum enumCode, T data) {
+        return new ResponseVo2<T>(enumCode.getCode(), enumCode.getMsg(), data);
     }
 
     //失败
-    public static <T> ResponseVo<T> failure(ProjectCodeEnum enumCode) {
-        return new ResponseVo<T>(enumCode.getCode(), enumCode.getMsg(), null);
+    public static <T> ResponseVo2<T> failure(ProjectCodeEnum enumCode) {
+        return new ResponseVo2<T>(enumCode.getCode(), enumCode.getMsg(), null);
     }
 
-    public static <T> ResponseVo<T> failure(T data) {
-        return new ResponseVo<T>(ProjectCodeEnum.FAILURE.getCode(), ProjectCodeEnum.FAILURE.getMsg(), data);
+    public static <T> ResponseVo2<T> failure(T data) {
+        return new ResponseVo2<T>(ProjectCodeEnum.FAILURE.getCode(), ProjectCodeEnum.FAILURE.getMsg(), data);
     }
 
-    public static <T> ResponseVo<T> failure(ProjectCodeEnum enumCode, T data) {
-        return new ResponseVo<T>(enumCode.getCode(), enumCode.getMsg(), data);
+    public static <T> ResponseVo2<T> failure(ProjectCodeEnum enumCode, T data) {
+        return new ResponseVo2<T>(enumCode.getCode(), enumCode.getMsg(), data);
     }
 
-    public static ResponseVo failure() {
-        return new ResponseVo(ProjectCodeEnum.FAILURE);
+    public static ResponseVo2 failure() {
+        return new ResponseVo2(ProjectCodeEnum.FAILURE);
     }
 
-    public static ResponseVo failure(int code, String msg) {
-        return new ResponseVo(code, msg, ProjectCodeEnum.FAILURE);
+    public static ResponseVo2 failure(int code, String msg) {
+        return new ResponseVo2(code, msg, ProjectCodeEnum.FAILURE);
     }
 
 
@@ -120,8 +127,8 @@ public class ResponseVo<T>        implements Serializable {
 //        return ResponseEntity.ok(map);
 //    }
 
-    public static <T> ResponseEntity<ResponseVo<T>> ok(int i, T data) {
-        ResponseVo responseVo = new ResponseVo<>(ProjectCodeEnum.SUCCESS.getCode(), ProjectCodeEnum.SUCCESS.getMsg(), data);
+    public static <T> ResponseEntity<ResponseVo2<T>> ok(int i, T data) {
+        ResponseVo2 responseVo = new ResponseVo2<>(ProjectCodeEnum.SUCCESS.getCode(), ProjectCodeEnum.SUCCESS.getMsg(), data);
         return ResponseEntity.ok(responseVo);
     }
 
