@@ -144,13 +144,11 @@ public class FileUtil {
             //判断
             suffix = suffix.toLowerCase();
             switch (suffix) {
+                case "jfif":
                 case "jpg":
                 case "jpeg":
-                    return true;
                 case "gif":
-                    return true;
                 case "png":
-                    return true;
                 case "bmp":
                     return true;
                 case "pdf":
