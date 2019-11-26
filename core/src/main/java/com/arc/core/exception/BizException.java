@@ -3,6 +3,8 @@ package com.arc.core.exception;
 
 import com.arc.core.enums.system.ProjectCodeEnum;
 
+import java.net.UnknownHostException;
+
 /**
  * 业务运行时异常
  *
@@ -36,6 +38,10 @@ public class BizException extends RuntimeException implements BaseException {
         super(e);
         this.code = projectCode.getCode();
         this.msg = projectCode.getMsg();
+    }
+
+    public BizException(UnknownHostException e) {
+        super(e);
     }
 
     @Override
