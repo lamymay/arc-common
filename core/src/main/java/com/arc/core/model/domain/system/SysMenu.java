@@ -1,6 +1,8 @@
 package com.arc.core.model.domain.system;
 
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -19,7 +21,7 @@ public class SysMenu implements Serializable {
     private static final long serialVersionUID = 1L;
 
     //mybatisplus 自增id很大,改进：使用数据库自带的增长策略
-//    @TableId(value = "id",type = IdType.AUTO)
+    @TableId(value = "id", type = IdType.AUTO)
     private Long id;// 主键id
     private Long parentId;// 父级id
     private String code;// 编码（备用）
