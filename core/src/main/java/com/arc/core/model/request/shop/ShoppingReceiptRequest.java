@@ -1,5 +1,6 @@
 package com.arc.core.model.request.shop;
 
+import com.arc.core.model.request.CommonPageQuery;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -13,7 +14,7 @@ import java.util.Date;
  */
 @Getter
 @Setter
-public class ShoppingReceiptRequest {
+public class ShoppingReceiptRequest  extends CommonPageQuery {
 
 	private static final long serialVersionUID = 1L;
 
