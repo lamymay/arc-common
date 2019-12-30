@@ -32,7 +32,7 @@ public class ShoppingReceipt extends BaseModel {
     private String cashRegisterCode="TZ02";// 收银机编码
     private String transactionType = "零售销售";// 交易类型
 
-    private Long  cashierId=80777439L;// 收银员编码
+    private Long  cashierId;// 收银员编码
     private Long shoppingReceiptId;// 小票编码
     private Long orderId;// 订单号码
 
