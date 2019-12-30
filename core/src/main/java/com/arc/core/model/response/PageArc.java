@@ -4,6 +4,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -15,8 +16,22 @@ import java.util.function.Function;
  * @author 叶超/lamy/lamymay/X/XL
  * @since 2019/11/23
  */
-public class CommonResponsePage<T> implements Page<T> {
+public class PageArc<T> implements Page<T>, Serializable {
 
+    /**
+     * 当前页
+     */
+    private int page = 1;
+
+    /**
+     * 数据总条数
+     */
+    private int total = 0;
+
+    /**
+     * 数据
+     */
+    List<T> content = new ArrayList<>();
 
     @Override
     public int getTotalPages() {
@@ -40,22 +55,22 @@ public class CommonResponsePage<T> implements Page<T> {
 
     @Override
     public int getSize() {
-        return 0;
+        return content == null ? 0 : content.size();
     }
 
     @Override
     public int getNumberOfElements() {
-        return 0;
+        return total;
     }
 
     @Override
     public List getContent() {
-        return null;
+        return content;
     }
 
     @Override
     public boolean hasContent() {
-        return false;
+        return content != null;
     }
 
     @Override
@@ -98,34 +113,20 @@ public class CommonResponsePage<T> implements Page<T> {
         return null;
     }
 
-    /**
-     * 当前页
-     */
-    private int page = 1;
 
-    /**
-     * 数据总条数
-     */
-    private int total = 0;
-
-    /**
-     * 数据
-     */
-    List<T> content = new ArrayList<>();
-
-    public CommonResponsePage() {
+    public PageArc() {
     }
 
-    public CommonResponsePage(List<T> content) {
+    public PageArc(List<T> content) {
         this.content = content;
     }
 
-    public CommonResponsePage(int page, int total) {
+    public PageArc(int page, int total) {
         this.page = page;
         this.total = total;
     }
 
-    public CommonResponsePage(int page, int total, List<T> content) {
+    public PageArc(int page, int total, List<T> content) {
         this.page = page;
         this.total = total;
         this.content = content;
