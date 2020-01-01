@@ -28,11 +28,11 @@ public class ShoppingReceipt extends BaseModel {
     private Long id;// 自增id
     private LocalDateTime transactionTime;// 交易时间
 
-    private String shopCode="9696";// 店铺编码
-    private String cashRegisterCode="TZ02";// 收银机编码
+    private String shopCode = "9696";// 店铺编码
+    private String cashRegisterCode = "TZ02";// 收银机编码
     private String transactionType = "零售销售";// 交易类型
 
-    private Long  cashierId;// 收银员编码
+    private Long cashierId;// 收银员编码
     private Long shoppingReceiptId;// 小票编码
     private Long orderId;// 订单号码
 
@@ -40,7 +40,7 @@ public class ShoppingReceipt extends BaseModel {
     private String name;// 名中文称
     private String nameEnglish;// 英文名称 （备用）
 
-    private String priceUnit;// 价格单位
+    private String priceUnit = "元";// 价格单位
 
     private int totalAmount;//总数量
     private int totalFinalPrice;// 成交价
@@ -62,4 +62,8 @@ public class ShoppingReceipt extends BaseModel {
 
     private LocalDateTime createTime;// 创建时间
     private LocalDateTime updateTime;// 更新时间
+
+    public float getTotalFinalPrice() {
+        return (float) ((float) totalFinalPrice / 10000F);
+    }
 }
