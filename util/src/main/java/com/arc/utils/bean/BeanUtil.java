@@ -6,13 +6,14 @@ import net.sf.cglib.beans.BeanCopier;
 import net.sf.cglib.beans.BeanGenerator;
 import net.sf.cglib.beans.BeanMap;
 import org.apache.commons.lang3.StringUtils;
-import org.springframework.util.CollectionUtils;
+import org.springframework.lang.Nullable;
 
 import java.lang.reflect.Field;
 import java.util.*;
 
 /**
  * 对象拷贝工具
+ *
  * @author Lamy
  */
 public class BeanUtil {
@@ -87,7 +88,7 @@ public class BeanUtil {
      * @return
      */
     public static <T> List<T> copyList(List<?> source, Class<T> target) {
-        if (CollectionUtils.isEmpty(source) || target == null) {
+        if (isEmpty(source) || target == null) {
             return Collections.emptyList();
         }
         List<T> result = new ArrayList<T>();
@@ -107,10 +108,10 @@ public class BeanUtil {
      */
     @SuppressWarnings("unchecked")
     public static <T> List<T> copyList(List<?> source, Class<T> target, Map<String, String> relation) {
-        if (CollectionUtils.isEmpty(source) || target == null) {
+        if (isEmpty(source) || target == null) {
             return new ArrayList<T>();
         }
-        if (relation==null||relation.isEmpty()) {
+        if (relation == null || relation.isEmpty()) {
             return copyList(source, target);
         }
         List<T> result = new ArrayList<T>(source.size());
@@ -179,8 +180,9 @@ public class BeanUtil {
 
         /**
          * 给bean属性赋值
+         *
          * @param property 属性名
-         * @param value 值
+         * @param value    值
          */
         public void setValue(String property, Object value) {
             beanMap.put(property, value);
@@ -188,6 +190,7 @@ public class BeanUtil {
 
         /**
          * 通过属性名得到属性值
+         *
          * @param property 属性名
          * @return 值
          */
@@ -197,6 +200,7 @@ public class BeanUtil {
 
         /**
          * 得到该实体bean对象
+         *
          * @return
          */
         public Object getObject() {
@@ -207,11 +211,20 @@ public class BeanUtil {
         private Object generateBean(Map propertyMap) {
             BeanGenerator generator = new BeanGenerator();
             Set keySet = propertyMap.keySet();
-            for (Iterator i = keySet.iterator(); i.hasNext();) {
+            for (Iterator i = keySet.iterator(); i.hasNext(); ) {
                 String key = (String) i.next();
                 generator.addProperty(key, (Class) propertyMap.get(key));
             }
             return generator.create();
         }
     }
+
+    /**
+     * @param collection
+     * @return
+     */
+    public static boolean isEmpty(@Nullable Collection<?> collection) {
+        return (collection == null || collection.isEmpty());
+    }
+
 }
