@@ -59,6 +59,7 @@ public enum ProjectCodeEnum {
 
 
     FILE_OPERATE_ERROR(1102, "文件操作错误"),
+    FILE_NOT_EXIST_ERROR(1102, "错误，文件不存在"),
     FILE_SAVE_EXCEPTION(1022, "文件保存异常"),
 
 
