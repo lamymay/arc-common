@@ -20,7 +20,6 @@ public class RoleForUpdateRequest extends AuthorizationRequest {
     private String code;
     private String name;
     private String description;
-    private String tag;
 
 
 }
