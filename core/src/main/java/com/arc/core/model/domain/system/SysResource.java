@@ -3,21 +3,22 @@ package com.arc.core.model.domain.system;
 import com.arc.core.model.BaseModel;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 import java.util.Date;
 import java.util.Objects;
 
 /**
- *
- *
+ * 资源
  */
 @Getter
 @Setter
+@ToString
 public class SysResource extends BaseModel {
 
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-	private Long  id;// 主键
+    private Long id;// 主键
     private String parentId;// 上级节点ID
     private String resourceName;// 资源名
     private String method;// 请求方法（GET/POST/PUT/DELETE...）
