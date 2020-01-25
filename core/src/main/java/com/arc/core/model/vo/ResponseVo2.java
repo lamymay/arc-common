@@ -8,6 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
 import java.io.Serializable;
+import java.time.LocalDateTime;
 
 /**
  * 该类对controller返回值做了统一封装
@@ -27,20 +28,31 @@ public class ResponseVo2<T>
     private static final long serialVersionUID = 1L;
 
     /**
-     * 状态信息 code 用String或者数字类型（long/int？）。私以为：类型是数字类型 可能高效一些，
+     * 状态信息 status 用String或者数字类型（long/int？）。私以为：类型是数字类型 可能高效一些，
      */
-    private int code;
+    private int status;
 
     /**
      * 状态信息
      */
-    private String msg;
+    private String message;
 
 
     /**
      * 有效数据
      */
     private T data;
+
+    private LocalDateTime timestamp;
+    private String error;
+    private String path;
+
+    //    ""timestamp: "2020-01-25T07:41:43.903+0000",
+    //    "status": 404,
+    //    "error": "Not Found",
+    //    "message": "No handler found for GET /zero/sys/resource/scan/auto",
+    //    "path": "/zero/sys/resource/scan/auto"
+
 
     //构造器
     public ResponseVo2() {
@@ -54,15 +66,15 @@ public class ResponseVo2<T>
 
     public ResponseVo2(ProjectCodeEnum projectCode) {
         super(HttpStatus.OK);
-        this.code = projectCode.getCode();
-        this.msg = projectCode.getMsg();
+        this.status = projectCode.getCode();
+        this.message = projectCode.getMsg();
         this.data = null;
     }
 
-    public ResponseVo2(int code, String msg, T data) {
+    public ResponseVo2(int status, String message, T data) {
         super(HttpStatus.OK);
-        this.code = code;
-        this.msg = msg;
+        this.status = status;
+        this.message = message;
         this.data = data;
     }
 
@@ -100,10 +112,9 @@ public class ResponseVo2<T>
         return new ResponseVo2(ProjectCodeEnum.FAILURE);
     }
 
-    public static ResponseVo2 failure(int code, String msg) {
-        return new ResponseVo2(code, msg, ProjectCodeEnum.FAILURE);
+    public static ResponseVo2 failure(int status, String message) {
+        return new ResponseVo2(status, message, ProjectCodeEnum.FAILURE);
     }
-
 
 
 //    public static <T> ResponseVo<T> ok(T body) {
@@ -123,7 +134,7 @@ public class ResponseVo2<T>
 //    public static <T> ResponseEntity<Map<Object, Object>> ok(T data) {
 //        Map<Object, Object> map = new HashMap<>(2);
 //        map.put("data", data);
-//        map.put("code", 200);
+//        map.put("status", 200);
 //        return ResponseEntity.ok(map);
 //    }
 
