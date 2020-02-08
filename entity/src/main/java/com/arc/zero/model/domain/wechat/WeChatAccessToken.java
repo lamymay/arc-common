@@ -24,7 +24,6 @@ public class WeChatAccessToken {
 
     private static final long serialVersionUID = 1L;
 
-
     /**
      * 自增 主键id
      */
