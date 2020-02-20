@@ -51,4 +51,5 @@ public class SysResource extends BaseModel {
     public int hashCode() {
         return Objects.hash(id, parentId, resourceName, method, path, note, priority, type, createDate, updateDate);
     }
+
 }
