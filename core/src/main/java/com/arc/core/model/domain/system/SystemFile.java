@@ -35,4 +35,19 @@ public class SystemFile extends BaseModel {
         this.name = name;
         this.suffix = suffix;
     }
+/*
+    public static SystemFile transferFile(MultipartFile file, String filePath) throws IOException {
+        SystemFile convertFile = new SystemFile(filePath);
+        if (convertFile.exists()) {
+            if (!convertFile.delete()) {
+                log.debug("本地文件已存在");
+            }
+        }
+        FileUtil.extractDirAndCreate(filePath);
+        try (InputStream inputStream = file.getInputStream()) {
+            FileUtil.copy(inputStream, convertFile);
+        }
+        return convertFile;
+    }*/
+
 }
