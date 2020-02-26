@@ -116,6 +116,7 @@ public class FileUtil {
         soundSuffixes.add("WMA");
         soundSuffixes.add("RM");
         soundSuffixes.add("M4A");
+        soundSuffixes.add("DTS");
     }
 
     public static List<String> getImageSuffixes() {
@@ -411,6 +412,22 @@ public class FileUtil {
                 bos.write(buffer, 0, count);
             }
         }
+    }
+
+    /**
+     *
+     * @param name
+     * @param var
+     * @return
+     */
+    public static String appendStringToEndName(String name, String var) {
+        int lastIndexOfPoint = name.lastIndexOf(".");
+        String preName = name.substring(0, lastIndexOfPoint);
+        String suffix = name.substring(lastIndexOfPoint);
+        log.info("文件后缀suffix={}" + suffix);
+        log.info("文件插入片段var={}" + var);
+        log.info("文件主题名称preName={}" + preName);
+        return preName + var + suffix;
     }
 
     /**
