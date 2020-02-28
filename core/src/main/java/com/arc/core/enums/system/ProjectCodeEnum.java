@@ -75,7 +75,8 @@ public enum ProjectCodeEnum {
 
     //APP
     APP_SYNC_CONTACT_NO_ONE(1201, "无有效同步数据！"),
-    APP_SYNC_CONTACT_UNKNOWN_TYPE(1202, "同步联系人！"),
+    APP_SYNC_CONTACT_UNKNOWN_TYPE(1202, "同步联系人错误，类型异常！"),
+    APP_SYNC_CONTACT_USER_NOT_EXIST(1204, "同步联系人，用户身份主体非法（不存在）！"),
 
     //=====================================================
     // 2000-2999 数据库操作级别的异常

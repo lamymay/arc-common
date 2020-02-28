@@ -19,7 +19,7 @@ public class AppContactRequest {
     /**
      * 发起人的身份标记
      */
-    private String flag;
+    private String userFlag;
 
     //同步方案
     private Integer type = 0;

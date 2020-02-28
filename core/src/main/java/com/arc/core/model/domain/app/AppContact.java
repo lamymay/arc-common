@@ -22,6 +22,10 @@ public class AppContact {
 
     //是每个通讯录中的id，不唯一，每个设备上的通讯录id各自独立
     private Integer contactId;
+
+    //本系统唯一的用户id
+    private Long userId;
+
     private String displayName;
 
     private String cellphone;

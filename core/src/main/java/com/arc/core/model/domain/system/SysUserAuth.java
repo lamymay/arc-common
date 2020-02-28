@@ -21,7 +21,7 @@ public class SysUserAuth extends BaseModel {
 
     private Long id;//用户授权信息表ID
 
-    private Long userId;//
+    private Long userId;//用户的id
 
     private String identifier;// 标识（手机号 邮箱 用户名或第三方应用的唯一标识） 1=username/password 2=cellphone 3=email 4=wechat 5=weibo 6=qq
 
