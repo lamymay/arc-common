@@ -4,7 +4,6 @@ import com.arc.core.enums.system.ProjectCodeEnum;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-import org.springframework.http.ResponseEntity;
 
 import java.io.Serializable;
 
@@ -18,8 +17,7 @@ import java.io.Serializable;
 @Getter
 @Setter
 @ToString
-public class ResponseVo<T>        implements Serializable {
-
+public class ResponseVo<T> implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -97,33 +95,6 @@ public class ResponseVo<T>        implements Serializable {
         return new ResponseVo(code, msg, ProjectCodeEnum.FAILURE);
     }
 
-
-
-//    public static <T> ResponseVo<T> ok(T body) {
-//        ResponseEntity.BodyBuilder builder = ok();
-//        return builder.body(body);
-//        super(body);
-//        return null;
-//    }
-
-//    /**
-//     * 返回值实际上是一个map<Object,Object> 非常自由
-//     *
-//     * @param data
-//     * @param <T>
-//     * @return
-//     */
-//    public static <T> ResponseEntity<Map<Object, Object>> ok(T data) {
-//        Map<Object, Object> map = new HashMap<>(2);
-//        map.put("data", data);
-//        map.put("code", 200);
-//        return ResponseEntity.ok(map);
-//    }
-
-    public static <T> ResponseEntity<ResponseVo<T>> ok(int i, T data) {
-        ResponseVo responseVo = new ResponseVo<>(ProjectCodeEnum.SUCCESS.getCode(), ProjectCodeEnum.SUCCESS.getMsg(), data);
-        return ResponseEntity.ok(responseVo);
-    }
 
 //
 //    /**

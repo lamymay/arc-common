@@ -25,10 +25,10 @@ public class ShoppingCommodityRequest {
 	private Integer discount;// 折扣率（备用）
 	private String priceUnit;// priceUnit 价格单位
 	private Integer finalPrice;// 成交价 就是该项商品实际需要支付金额
-	private Object sate;// 状态
 	private String remark;// 备注
-	private String avatar;// 图
-	private String nameEnglish;// 英文名称 （备用）
-	private Date createTime;// 创建时间
-	private Date updateTime;// 更新时间
+    private String avatar;// 图
+    private String nameEnglish;// 英文名称 （备用）
+    private Date createTime;// 创建时间
+    private Date updateTime;// 更新时间
+    private Integer sate;// 状态
 }

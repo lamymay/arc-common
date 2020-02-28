@@ -15,88 +15,30 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 public class AppContact {
 
-
     private static final long serialVersionUID = 1L;
 
-
-    /**
-     * APP联系人表
-     */
-    private String cellphone;
-
-
-    /**
-     * APP联系人表
-     */
-    private String displayName;
-
-    /**
-     * APP联系人表
-     */
-    private String email;
-
-    /**
-     * APP联系人表
-     */
-    private String groupMembership;
-
-    /**
-     * APP联系人表
-     */
+    //本系统中的id是主键
     private Integer id;
 
-    /**
-     * APP联系人表
-     */
+    //是每个通讯录中的id，不唯一，每个设备上的通讯录id各自独立
+    private Integer contactId;
+    private String displayName;
+
+    private String cellphone;
+    private String telephone;
+    private String email;
+
     private String im;
-
-    /**
-     * 图片
-     */
     private String photo;
-
-    /**
-     * APP联系人表
-     */
-    private String name;
-
-    /**
-     * APP联系人表
-     */
     private String nickname;
-
-    /**
-     * APP联系人表
-     */
     private String organization;
-
-//    /**
-//     *  APP联系人表
-//     */
-//    private Object photo;
-
-    /**
-     * APP联系人表
-     */
     private String postalAddress;
+    private String groupMembership;
 
-    /**
-     * APP联系人表
-     */
+    //保留字段
+    private String name;
     private Integer state;
 
-    /**
-     * APP联系人表
-     */
-    private String telephone;
-
-    /**
-     * APP联系人表
-     */
-    private LocalDateTime updateTime;
-
-    /**
-     * APP联系人表
-     */
     private LocalDateTime createTime;
+    private LocalDateTime updateTime;
 }

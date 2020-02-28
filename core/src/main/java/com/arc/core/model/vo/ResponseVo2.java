@@ -24,7 +24,6 @@ public class ResponseVo2<T>
         extends ResponseEntity
         implements Serializable {
 
-
     private static final long serialVersionUID = 1L;
 
     /**
@@ -37,12 +36,10 @@ public class ResponseVo2<T>
      */
     private String message;
 
-
     /**
      * 有效数据
      */
     private T data;
-
     private LocalDateTime timestamp;
     private String error;
     private String path;
@@ -142,6 +139,34 @@ public class ResponseVo2<T>
         ResponseVo2 responseVo = new ResponseVo2<>(ProjectCodeEnum.SUCCESS.getCode(), ProjectCodeEnum.SUCCESS.getMsg(), data);
         return ResponseEntity.ok(responseVo);
     }
+
+
+//    public static <T> ResponseVo<T> ok(T body) {
+//        ResponseEntity.BodyBuilder builder = ok();
+//        return builder.body(body);
+//        super(body);
+//        return null;
+//    }
+
+//    /**
+//     * 返回值实际上是一个map<Object,Object> 非常自由
+//     *
+//     * @param data
+//     * @param <T>
+//     * @return
+//     */
+//    public static <T> ResponseEntity<Map<Object, Object>> ok(T data) {
+//        Map<Object, Object> map = new HashMap<>(2);
+//        map.put("data", data);
+//        map.put("code", 200);
+//        return ResponseEntity.ok(map);
+//    }
+
+//    public static <T> ResponseEntity<ResponseVo<T>> ok(int i, T data) {
+//        ResponseVo responseVo = new ResponseVo<>(ProjectCodeEnum.SUCCESS.getCode(), ProjectCodeEnum.SUCCESS.getMsg(), data);
+//        return ResponseEntity.ok(responseVo);
+//    }
+
 
 //
 //    /**
