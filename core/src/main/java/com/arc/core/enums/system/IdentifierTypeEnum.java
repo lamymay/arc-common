@@ -34,21 +34,24 @@ public enum IdentifierTypeEnum implements IntegerStatusEnums {
 //        return null;
 //    }
 
-
     @Override
     public int getNumber() {
         return number;
-    }
-
-    public String getMsg() {
-        return message;
     }
 
     public void setNumber(int number) {
         this.number = number;
     }
 
-    public void setMsg(String message) {
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
         this.message = message;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(IdentifierTypeEnum.CELLPHONE);
     }
 }
