@@ -3,6 +3,7 @@ package com.arc.core.model.domain.app;
 import lombok.*;
 
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Objects;
 
 /**
@@ -28,6 +29,8 @@ public class AppContact {
     private Long userId;
 
     private String displayName;
+
+    private List<String> phoneNumbers;
 
     private String cellphone;
     private String telephone;
