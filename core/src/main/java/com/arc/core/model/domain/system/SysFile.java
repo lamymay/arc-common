@@ -24,6 +24,7 @@ public class SysFile extends BaseModel {
     private String type;// 类型
     private Integer version;// 版本信息id
 
+    //todo  rename length
     private Long size;// 文件大小
     private String sizeUnit;// 文件大小单位
     private String remark;// 描述
