@@ -26,7 +26,8 @@ public class SysFile extends BaseModel {
     private String lengthUnit;// 文件大小单位
 
     private String suffix;// 后缀
-    private String type;// 类型
+    private String type;// 类型 文件还是图片  一般来说图片是可以直接预览的,
+
     private String note;// 描述
 
     private String path;// 文件存放位置--如果是自己的环境应该是服务器的绝对路径
@@ -35,6 +36,7 @@ public class SysFile extends BaseModel {
     private String host;// 文件持久化位置，用于 判断拼接url前部分    SERVER / DEVELOP  或者偷懒直接写 ip
     private String uri;// 文件存放 url=      {host}:{port} +/xxx/yyy/zzz
 
+    private String thumbnailUri;//缩略图 注意仅仅图片应该由此相数据 图片类型有此属性，缩略图地址，其磁盘路径与主图path相似，在文件名称中加入small标识，格式：123_small.png
 
     private Integer version;// 版本信息id
     private Integer state;// 逻辑删除用的标识
