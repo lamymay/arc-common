@@ -20,6 +20,7 @@ public class AppContact {
     private static final long serialVersionUID = 1L;
 
     //本系统中的id是主键
+//    @TableId(value = "id", type = IdType.AUTO)
     private Long id;
 
     //是每个通讯录中的id，不唯一，每个设备上的通讯录id各自独立
