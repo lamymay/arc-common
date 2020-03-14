@@ -1,9 +1,10 @@
 package com.arc.core.model.domain.app;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
 import lombok.*;
 
 import java.time.LocalDateTime;
-import java.util.List;
 import java.util.Objects;
 
 /**
@@ -20,6 +21,7 @@ public class AppContactDetail {
     private static final long serialVersionUID = 1L;
 
     //本系统中的id是主键
+    @TableId(value = "id", type = IdType.AUTO)
     private Long id;
 
     //contact表的id
