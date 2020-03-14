@@ -13,7 +13,6 @@ import java.util.Objects;
 @Setter
 @Getter
 @ToString
-@NoArgsConstructor
 @AllArgsConstructor
 public class AppContact {
 
@@ -24,6 +23,7 @@ public class AppContact {
     private Long id;
 
     //是每个通讯录中的id，不唯一，每个设备上的通讯录id各自独立
+    @Deprecated
     private Integer contactId;
 
     //本系统唯一的用户id
@@ -31,7 +31,8 @@ public class AppContact {
 
     private String displayName;
 
-    private List<String> phoneNumbers;
+    private List<String> phones;
+    private List<String> emails;
 
     private String cellphone;
     private String telephone;
@@ -50,6 +51,13 @@ public class AppContact {
 
     private LocalDateTime createTime;
     private LocalDateTime updateTime;
+
+    public AppContact() {
+    }
+
+    public AppContact(Long userId) {
+        this.userId = userId;
+    }
 
     @Override
     public boolean equals(Object o) {

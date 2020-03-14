@@ -6,6 +6,7 @@ package com.arc.core.enums.system;
  * @author 叶超
  * @since 2020/2/29 11:09
  */
+@Deprecated
 public enum AppContactSynStrategyTypeEnum {
 
     /**
