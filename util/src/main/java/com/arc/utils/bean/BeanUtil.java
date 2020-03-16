@@ -1,7 +1,5 @@
 package com.arc.utils.bean;
 
-import com.arc.core.enums.system.ProjectCodeEnum;
-import com.arc.core.exception.BizException;
 import net.sf.cglib.beans.BeanCopier;
 import net.sf.cglib.beans.BeanGenerator;
 import net.sf.cglib.beans.BeanMap;
@@ -74,7 +72,8 @@ public class BeanUtil {
             instance = target.newInstance();
             copyProperties(source, instance);
         } catch (Exception e) {
-            throw new BizException(e, ProjectCodeEnum.BEAN_COPY_EXCEPTION);
+            throw new RuntimeException(e);
+            //throw new BizException(e, ProjectCodeEnum.BEAN_COPY_EXCEPTION);
         }
         return instance;
     }
@@ -149,7 +148,8 @@ public class BeanUtil {
                 result.add((T) cglibBean.getObject());
             }
         } catch (Exception e) {
-            throw new BizException(e, ProjectCodeEnum.BEAN_COPY_EXCEPTION);
+            throw new RuntimeException(e);
+            //throw new BizException(e, ProjectCodeEnum.BEAN_COPY_EXCEPTION);
         }
         return result;
     }

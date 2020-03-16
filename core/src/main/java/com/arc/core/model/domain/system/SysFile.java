@@ -1,7 +1,6 @@
 package com.arc.core.model.domain.system;
 
 import com.arc.core.model.BaseModel;
-import com.arc.utils.file.LengthUtil;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -48,6 +47,7 @@ public class SysFile extends BaseModel {
 
     private Date createTime;// 创建时间
     private Date updateTime;// 更新时间
+/*
 
     public String getFormatLength() {
         if (null == this.getLengthUnit() || "".equals(this.getLengthUnit())) {
@@ -56,8 +56,8 @@ public class SysFile extends BaseModel {
 
             return this.getLengthUnit();
         }
-
     }
+*/
 
 }
 

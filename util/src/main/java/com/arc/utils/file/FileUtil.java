@@ -1,13 +1,10 @@
 package com.arc.utils.file;
 
 import com.arc.utils.mine.Md5Util;
-import org.apache.commons.io.FileUtils;
-import org.apache.commons.io.FilenameUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.util.Assert;
-import org.springframework.web.multipart.MultipartFile;
 
 import java.io.*;
 import java.net.URLEncoder;
@@ -572,28 +569,28 @@ public class FileUtil {
         log.debug("文件保存在本地磁盘的位置为={}", outDir);
         return outDir;
     }
-
-    /***
-     * 处理上传文件
-     *
-     * @param file
-     * @param basePath        存放文件的目录的绝对路径 servletContext.getRealPath("/upload")
-     * @return
-     */
-    public static String upload(MultipartFile file, String basePath) {
-        String orgFileName = file.getOriginalFilename();
-        String fileName = UUID.randomUUID().toString() + "." + FilenameUtils.getExtension(orgFileName);
-        try {
-            File targetFile = new File(basePath, fileName);
-            FileUtils.writeByteArrayToFile(targetFile, file.getBytes());
-            //把文件同步到公共文件夹
-            File publicFile = new File("/", fileName);
-            FileUtils.writeByteArrayToFile(publicFile, file.getBytes());
-        } catch (IOException e) {
-            log.error("异常={}", e);
-        }
-        return fileName;
-    }
+//
+//    /***
+//     * 处理上传文件
+//     *
+//     * @param file
+//     * @param basePath        存放文件的目录的绝对路径 servletContext.getRealPath("/upload")
+//     * @return
+//     */
+//    public static String upload(MultipartFile file, String basePath) {
+//        String orgFileName = file.getOriginalFilename();
+//        String fileName = UUID.randomUUID().toString() + "." + FilenameUtils.getExtension(orgFileName);
+//        try {
+//            File targetFile = new File(basePath, fileName);
+//            FileUtils.writeByteArrayToFile(targetFile, file.getBytes());
+//            //把文件同步到公共文件夹
+//            File publicFile = new File("/", fileName);
+//            FileUtils.writeByteArrayToFile(publicFile, file.getBytes());
+//        } catch (IOException e) {
+//            log.error("异常={}", e);
+//        }
+//        return fileName;
+//    }
 
     /**
      * @param in  输入

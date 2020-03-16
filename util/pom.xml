@@ -14,7 +14,7 @@
     <!-- 项目说明：这里作为聚合工程的父工程 -->
     <groupId>com.arc</groupId>
     <artifactId>util</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.2</version>
 
     <name>util</name>
     <description>SpringBoot util 块构：基本公共util模块</description>
@@ -26,18 +26,13 @@
             <artifactId>cglib</artifactId>
             <version>3.3.0</version>
         </dependency>
-        <dependency>
-            <groupId>com.arc</groupId>
-            <artifactId>core</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-            <scope>compile</scope>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>com.arc</groupId>-->
+<!--            <artifactId>core</artifactId>-->
+<!--            <version>0.0.1-SNAPSHOT</version>-->
+<!--            <scope>compile</scope>-->
+<!--        </dependency>-->
         <!-- https://mvnrepository.com/artifact/com.alibaba/fastjson -->
-        <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>fastjson</artifactId>
-            <version>1.2.62</version>
-        </dependency>
 
     </dependencies>
 
