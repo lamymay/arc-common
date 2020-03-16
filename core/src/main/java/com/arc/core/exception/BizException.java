@@ -40,6 +40,12 @@ public class BizException extends RuntimeException implements BaseException {
         this.msg = projectCode.getMsg();
     }
 
+    public BizException(ProjectCodeEnum projectCode, Exception e) {
+        super(e);
+        this.code = projectCode.getCode();
+        this.msg = projectCode.getMsg();
+    }
+
     public BizException(UnknownHostException e) {
         super(e);
     }
