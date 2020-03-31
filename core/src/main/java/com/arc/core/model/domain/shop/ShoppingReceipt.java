@@ -42,14 +42,14 @@ public class ShoppingReceipt extends BaseModel {
 
     private String priceUnit = "元";// 价格单位
 
-    private int totalAmount;//总数量
-    private int totalFinalPrice;// 成交价
-    private int totalDiscount;// 总折扣
+    private Integer totalAmount;//总数量
+    private Integer totalFinalPrice;// 成交价
+    private Integer totalDiscount;// 总折扣
 
     // 应收：receivable、应付：payable、实收：receipts、实付：payment
-    private int change;//找零 = 实收 - 应收款
-    private int receivable;//应收款
-    private int receipts;//实收
+    private Integer change;//找零 = 实收 - 应收款
+    private Integer receivable;//应收款
+    private Integer receipts;//实收
 
     private String payWay;//支付方式
 
@@ -63,7 +63,7 @@ public class ShoppingReceipt extends BaseModel {
     private LocalDateTime createTime;// 创建时间
     private LocalDateTime updateTime;// 更新时间
 
-    public float getTotalFinalPrice() {
-        return (float) ((float) totalFinalPrice / 10000F);
-    }
+//    public float getTotalFinalPrice() {
+//        return (float) ((float) totalFinalPrice / 10000F);
+//    }
 }

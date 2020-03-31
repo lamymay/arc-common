@@ -25,7 +25,7 @@ public class ShoppingReceiptRequest extends CommonPageQuery {
     private String name;// 名中文称
 
     @NotNull(message = "总价不为空")
-    private int totalFinalPrice;// 成交价
+    private String totalFinalPrice;// 成交价
 
     private boolean state;// 状态，暂时规划true=非0/false=0
 
