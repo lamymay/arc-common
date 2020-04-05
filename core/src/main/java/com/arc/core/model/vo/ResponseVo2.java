@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.util.HashMap;
 
 /**
  * 该类对controller返回值做了统一封装
@@ -121,6 +122,7 @@ public class ResponseVo2<T>
 //        return null;
 //    }
 
+
 //    /**
 //     * 返回值实际上是一个map<Object,Object> 非常自由
 //     *
@@ -138,6 +140,12 @@ public class ResponseVo2<T>
     public static <T> ResponseEntity<ResponseVo2<T>> ok(int i, T data) {
         ResponseVo2 responseVo = new ResponseVo2<>(ProjectCodeEnum.SUCCESS.getCode(), ProjectCodeEnum.SUCCESS.getMsg(), data);
         return ResponseEntity.ok(responseVo);
+    }
+
+    public static ResponseEntity okMap(Object data) {
+        HashMap<String, Object> map = new HashMap<>(16);
+        map.put("data", data);
+        return ResponseEntity.ok(map);
     }
 
 
