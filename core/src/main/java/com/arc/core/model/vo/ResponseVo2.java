@@ -113,8 +113,8 @@ public class ResponseVo2<T>
         return new ResponseVo2(status, message, ProjectCodeEnum.FAILURE);
     }
 
-
-//    public static <T> ResponseVo<T> ok(T body) {
+//
+//    public static ResponseEntity ok(T body) {
 //        ResponseEntity.BodyBuilder builder = ok();
 //        return builder.body(body);
 //        super(body);
