@@ -1,4 +1,4 @@
-package com.arc.core.model.request.system;
+package com.arc.core.model.request.system.user;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

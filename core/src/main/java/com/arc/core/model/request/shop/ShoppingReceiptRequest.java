@@ -1,6 +1,6 @@
 package com.arc.core.model.request.shop;
 
-import com.arc.core.model.request.CommonPageQuery;
+import com.arc.core.model.request.PageQuery;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -15,7 +15,7 @@ import java.time.LocalDateTime;
  */
 @Getter
 @Setter
-public class ShoppingReceiptRequest extends CommonPageQuery {
+public class ShoppingReceiptRequest extends PageQuery {
 
     private static final long serialVersionUID = 1L;
 

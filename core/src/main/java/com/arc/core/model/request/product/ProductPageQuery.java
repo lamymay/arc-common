@@ -1,6 +1,6 @@
 package com.arc.core.model.request.product;
 
-import com.arc.core.model.request.Query;
+import com.arc.core.model.request.PageQuery;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -15,6 +15,6 @@ import lombok.ToString;
 @Getter
 @ToString
 @NoArgsConstructor
-public class ProductQuery extends Query {
+public class ProductPageQuery extends PageQuery {
 
 }

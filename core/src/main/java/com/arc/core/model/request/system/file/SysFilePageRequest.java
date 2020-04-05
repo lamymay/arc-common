@@ -1,6 +1,6 @@
-package com.arc.core.model.request.system;
+package com.arc.core.model.request.system.file;
 
-import com.arc.core.model.request.CommonPageQuery;
+import com.arc.core.model.request.PageQuery;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -15,7 +15,7 @@ import java.util.Date;
 @Getter
 @Setter
 @ToString
-public class SysFilePageRequest extends CommonPageQuery {
+public class SysFilePageRequest extends PageQuery {
 
     private static final long serialVersionUID = 1L;
 

@@ -1,4 +1,4 @@
-package com.arc.core.model.request.system;
+package com.arc.core.model.request.system.file;
 
 import com.arc.core.model.BaseModel;
 import lombok.Getter;

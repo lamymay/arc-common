@@ -1,28 +1,19 @@
-package com.arc.core.model.request.system;
+package com.arc.core.model.request.system.dictionary;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
-import java.util.List;
-
 /**
  * @author 叶超
- * @since 2019/9/1 21:43
+ * @since 2019/9/29 23:28
  */
 @Setter
 @Getter
 @ToString
 @NoArgsConstructor
-public class SysRoleRequest {
-
+public class SysDataDictionaryRequest {
     private Long id;//主键
     private String name;//名称
-
-    /**
-     * 资源的ids
-     */
-    private List<Long> resourceIds;
-
 }
