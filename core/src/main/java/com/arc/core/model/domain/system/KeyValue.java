@@ -1,11 +1,12 @@
 package com.arc.core.model.domain.system;
 
+import com.arc.core.enums.common.EnableEnum;
+import com.arc.core.enums.common.SexEnum;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
 import java.io.Serializable;
-import java.util.Date;
 
 /**
  * key-value表，偷懒用
@@ -23,7 +24,22 @@ public class KeyValue implements Serializable {
     private String key;
     private String value;
 
-    private Integer type;
+    private String type;
     private String note;
-    private byte[]  valueBinary;//列值 clob类型
+
+    /**
+     * 枚举属性测试1
+     */
+    private EnableEnum enable;
+
+
+    /**
+     * 枚举属性测试2
+     */
+    private SexEnum sex;
+
+    /**
+     * 二进制属性测试
+     */
+    private byte[] valueBinary;//列值 blob类型
 }

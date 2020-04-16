@@ -1,4 +1,4 @@
-package com.arc.core.enums.system;
+package com.arc.core.enums.common;
 
 
 /**
