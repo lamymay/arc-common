@@ -16,6 +16,7 @@ import java.util.Date;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Deprecated
 public class SystemFile extends BaseModel {
 
     private static final long serialVersionUID = 1L;

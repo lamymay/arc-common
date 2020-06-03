@@ -17,13 +17,13 @@ public class SysFile extends BaseModel {
 
     private static final long serialVersionUID = 1L;
 
-    private Long id;//
-    private String code;// 版本号
+    private Long id;//id
+    private String code;//编号
 
     //文件 本身属性： 名称/大小/后缀/文件位置/类型
     private String name;// 显示名称
-    private Long length;// 文件大小
     private String lengthUnit;// 文件大小单位
+    private Long length;// 文件大小
 
     private String suffix;// 后缀
     private String type;// 类型 文件还是图片  一般来说图片是可以直接预览的,

@@ -1,17 +1,19 @@
 package com.arc.core.model.domain.blog;
 
 import com.arc.core.model.domain.BaseModel;
+import com.arc.core.model.domain.system.SysResource;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * 文章表
  *
  * @author 叶超
- * @since: 2019/1/30 15:09
+ * @since 2019/1/30 15:09
  */
 @Getter
 @Setter
@@ -34,7 +36,7 @@ public class BlogArticle extends BaseModel {
     private Date createDate;// 创建时间(创建未发表)
     private Date updateDate;// 更新时间
 
-
+    private List<SysResource> resources;//资源
     //notebook_id: "33000680",
     //title: "XXX",
     //在底部 at_bottom: false}
