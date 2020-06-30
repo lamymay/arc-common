@@ -42,4 +42,12 @@ public class KeyValue implements Serializable {
      * 二进制属性测试
      */
     private byte[] valueBinary;//列值 blob类型
+
+    public KeyValue(String key, String value, String type, String note) {
+        this.key = key;
+        this.value = value;
+        this.type = type;
+        this.note = note;
+
+    }
 }
