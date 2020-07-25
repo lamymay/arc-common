@@ -7,8 +7,6 @@ import lombok.Setter;
 import lombok.ToString;
 
 import java.time.LocalDateTime;
-import java.util.Date;
-import java.util.Objects;
 
 /**
  * 资源
@@ -34,14 +32,11 @@ public class SysResource extends BaseModel {
 
     private Integer status;// 状态
 
-    private Date createDate;// 创建时间
-    private Date updateDate;// 修改时间
-
+//    private Date createDate;// 创建时间
+//    private Date updateDate;// 修改时间
+//
     private LocalDateTime createTime;// 创建时间
     private LocalDateTime updateTime;// 更新时间
-
-//    private LocalDateTime createTime;// 创建时间
-//    private LocalDateTime updateTime;// 更新时间
 
 
 }
