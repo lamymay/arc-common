@@ -1,23 +1,18 @@
-package com.arc.core.model.domain.system;
-
+package com.arc.core.model.request.system.menu;
 
 import com.arc.core.model.request.PageQuery;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
-import java.io.Serializable;
 import java.util.Date;
 
-/**
- * 菜单表实体
- *
- * @author X
- */
 @Getter
 @Setter
-public class SysMenu implements Serializable {
+@ToString
+public class SysMenuRequest extends PageQuery {
 
     private static final long serialVersionUID = 1L;
 
@@ -29,7 +24,7 @@ public class SysMenu implements Serializable {
 
     private String name;// 名中文称
     private String nameEnglish;// 英文名称 （备用）
-    private int sort;// 排序用权重（数字小的在前面）
+    //private int sort;// 排序用权重（数字小的在前面）
     private int level;// 级别，1=第一级，2=第二级，，，
     private int state;// 状态，暂时规划true=非0/false=0
     private String url;// 菜单URL地址
