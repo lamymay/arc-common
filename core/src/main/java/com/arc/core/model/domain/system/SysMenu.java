@@ -24,7 +24,7 @@ public class SysMenu implements Serializable, Comparable<SysMenu> {
     //mybatisplus 自增id很大,改进：使用数据库自带的增长策略
     @TableId(value = "id", type = IdType.AUTO)
     private Long id;// 主键id
-    private Long systemId;// 适用系统的id
+    private Integer systemId;// 适用系统的id
     private int level;// 级别，1=第一级，2=第二级，，，
     private Long parentId;// 父级id
 
