@@ -2,6 +2,7 @@ package com.arc.core.model.request;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.data.domain.Pageable;
 
 /**
  * @author may
@@ -10,24 +11,34 @@ import lombok.Setter;
 @Setter
 public class PageQuery extends Query {
 
-
-    private int currentPage = DefaultPageParameter.DEFAULT_CURRENT_PAGE;
-    private int pageSize = DefaultPageParameter.DEFAULT_PAGE_SIZE;
-
-    /**
-     * 排序字段 例如
-     */
-    private String sort;
-
     interface DefaultPageParameter {
-
         int DEFAULT_CURRENT_PAGE = 1;
-
         int DEFAULT_PAGE_SIZE = 20;
     }
 
 
+    private int currentPage = DefaultPageParameter.DEFAULT_CURRENT_PAGE;
+
+    private int pageSize = DefaultPageParameter.DEFAULT_PAGE_SIZE;
+
+    //
+//    private Integer currentPage;
+//
+//    private Integer pageSize;
+//
+//    private Integer offSet;
+//
+//    private Integer start;
+//
+//    private Integer end;
+
 //    /**
+//     * 排序字段 例如
+//     */
+//    private String sort;
+
+
+    //    /**
 //     * 后端使用分页参数的时候 当前页需要减1，并需要校验
 //     *
 //     * @return
@@ -48,15 +59,6 @@ public class PageQuery extends Query {
 //}
 
 
-//
-//    private Integer currentPage;
-//
-//    private Integer pageSize;
-//
-//    private Integer offSet;
-//
-//    private Integer start;
-//
-//    private Integer end;
+
 
 }

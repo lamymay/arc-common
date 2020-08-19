@@ -16,6 +16,7 @@ import java.util.function.Function;
  * @author 叶超/lamy/lamymay/X/XL
  * @since 2019/11/23
  */
+@Deprecated
 public class PageArc<T> implements Page<T>, Serializable {
 
     /**
