@@ -1,10 +1,12 @@
-package com.arc.core.model.domain.test;
+package com.arc.core.model.domain.demo;
 
 import com.arc.core.enums.common.EnableEnum;
 import com.arc.core.enums.common.GenderEnum;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+
+import java.time.LocalDateTime;
 
 /**
  * 枚举属性测试
@@ -30,6 +32,9 @@ public class TestEnumDomain {
      * 复杂枚举测试,db中是数字 映射到 复杂枚举 EMUN1(1,"message")
      */
     private GenderEnum gender;//性别
+
+    private LocalDateTime createAt;
+    private LocalDateTime updateAt;
 
 
 }
