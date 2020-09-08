@@ -6,16 +6,26 @@ package com.arc.core.enums.common;
  */
 public enum SexEnum implements IEnum {
 
-    MAN(1, "男"),
-
-    WOMAN(2, "女");
+    UNKNOWN(0, "保密"),
+    MALE(1, "男"),
+    FEMALE(2, "女");
 
     private int key;
-    private String value;
+    private String message;
 
-    SexEnum(int key, String value) {
+    SexEnum(int key, String message) {
         this.key = key;
-        this.value = value;
+        this.message = message;
+    }
+
+    public static SexEnum getSexByKey(int key) {
+
+        for (SexEnum sex : SexEnum.values()) {
+            if (sex.getKey() == key) {
+                return sex;
+            }
+        }
+        return null;
     }
 
 
@@ -31,11 +41,11 @@ public enum SexEnum implements IEnum {
 
     @Override
     public String getValue() {
-        return value;
+        return message;
     }
 
     @Override
-    public void setValue(String value) {
-        this.value = value;
+    public void setValue(String message) {
+        this.message = message;
     }
 }
