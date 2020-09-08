@@ -4,7 +4,7 @@ package com.arc.core.enums.common;
  * @author 叶超
  * @since 2020/4/17 0:10
  */
-public enum SexEnum implements IEnum {
+public enum GenderEnum implements IEnum {
 
     UNKNOWN(0, "保密"),
     MALE(1, "男"),
@@ -13,14 +13,14 @@ public enum SexEnum implements IEnum {
     private int key;
     private String message;
 
-    SexEnum(int key, String message) {
+    GenderEnum(int key, String message) {
         this.key = key;
         this.message = message;
     }
 
-    public static SexEnum getSexByKey(int key) {
+    public static GenderEnum getSexByKey(int key) {
 
-        for (SexEnum sex : SexEnum.values()) {
+        for (GenderEnum sex : GenderEnum.values()) {
             if (sex.getKey() == key) {
                 return sex;
             }
