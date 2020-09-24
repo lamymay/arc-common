@@ -3,6 +3,10 @@ package com.arc.core.model.request.system;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import org.apache.commons.lang3.time.DateUtils;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
  * @author 叶超
@@ -14,4 +18,6 @@ import lombok.ToString;
 public class IdStringRequest {
 
     private String id;
+
+
 }
