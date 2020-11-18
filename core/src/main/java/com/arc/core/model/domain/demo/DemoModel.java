@@ -17,7 +17,7 @@ import java.time.LocalDateTime;
 @Setter
 @Getter
 @ToString
-public class TestEnumDomain {
+public class DemoModel {
 
     private Long id;//主键id
     private String name;//名称
