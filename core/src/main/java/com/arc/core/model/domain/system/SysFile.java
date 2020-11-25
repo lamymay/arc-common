@@ -30,7 +30,7 @@ public class SysFile extends BaseModel {
 
     private String note;// 描述
 
-    private String path;// 文件存放位置--如果是自己的环境应该是服务器的绝对路径
+    private String path;// 文件本地存放位置--如果是自己的环境应该是服务器的绝对路径
 
     private String location;// 文件持久化位置，用于 判断拼接url前部分    SERVER / DEVELOP
     private String host;// 文件持久化位置，用于 判断拼接url前部分    SERVER / DEVELOP  或者偷懒直接写 ip
@@ -47,6 +47,18 @@ public class SysFile extends BaseModel {
 
     private Date createTime;// 创建时间
     private Date updateTime;// 更新时间
+
+    public SysFile() {
+
+    }
+
+    public SysFile(Long id) {
+        this.id = id;
+    }
+
+    public SysFile(String code) {
+        this.code = code;
+    }
 /*
 
     public String getFormatLength() {
