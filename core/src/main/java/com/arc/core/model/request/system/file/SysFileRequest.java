@@ -26,7 +26,7 @@ public class SysFileRequest  implements Serializable {
     private String suffix;// 后缀
     private Integer version;// 版本信息id
     private String key;// 文件标识
-    private String url;// 文件存放url
+    private String uri;// 文件存放uri
     private String note;// 描述
     private String checkType;// 校验方式
     private String checkCode;// 校验码
