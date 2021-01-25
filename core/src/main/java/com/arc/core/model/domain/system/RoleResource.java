@@ -1,10 +1,11 @@
 package com.arc.core.model.domain.system;
 
-import com.arc.core.model.BaseModel;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import java.io.Serializable;
 
 /**
  * @author 叶超
@@ -14,7 +15,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @EqualsAndHashCode
-public class RoleResource extends BaseModel {
+public class RoleResource implements Serializable {
 
     private static final long serialVersionUID = 1L;
 

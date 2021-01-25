@@ -1,11 +1,11 @@
 package com.arc.core.model.domain.system;
 
-import com.arc.core.model.BaseModel;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
 /**
@@ -15,7 +15,7 @@ import java.time.LocalDateTime;
 @Setter
 @ToString
 @EqualsAndHashCode
-public class SysResource extends BaseModel {
+public class SysResource implements Serializable {
 
     private static final long serialVersionUID = 1L;
 

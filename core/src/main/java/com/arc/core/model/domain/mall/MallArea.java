@@ -1,5 +1,6 @@
 package com.arc.core.model.domain.mall;
 
+import com.arc.core.model.domain.BaseModel;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -10,7 +11,7 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-public class MallArea {
+public class MallArea extends BaseModel {
 
     private static final long serialVersionUID = 1L;
 
@@ -19,7 +20,7 @@ public class MallArea {
     private Long areaCode;// 地区代码
 
     //@todo 修改表     数据库的重构，  mall为主对象，从属一对多 或者一对一关联多个子属性 ，
-//    、、关联关系有，
+//    关联关系有，
 //    mall_area 11
 //    mall_question 1-*
 //    mall_task 1-*

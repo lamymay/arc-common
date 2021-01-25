@@ -1,10 +1,9 @@
 package com.arc.core.model.domain.mq;
 
+import com.arc.core.model.domain.BaseModel;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-
-import java.io.Serializable;
 
 /**
  * @author may
@@ -13,7 +12,8 @@ import java.io.Serializable;
 @Setter
 @Getter
 @ToString
-public class User implements Serializable {
+@Deprecated
+public class User extends BaseModel {
 
     private static final long serialVersionUID = 1L;
 
@@ -25,7 +25,7 @@ public class User implements Serializable {
 
     private String nickName;
 
-   private String email;
+    private String email;
 
     private String cardNumber;
 

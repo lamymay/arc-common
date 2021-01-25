@@ -1,5 +1,6 @@
 package com.arc.core.model.domain.mall;
 
+import com.arc.core.model.domain.BaseModel;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -10,7 +11,7 @@ import java.util.Date;
  */
 @Getter
 @Setter
-public class MallQuestion {
+public class MallQuestion extends BaseModel {
 
     private static final long serialVersionUID = 1L;
 

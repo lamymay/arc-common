@@ -17,7 +17,7 @@ import java.io.Serializable;
 //@Document(collection = "mongo_person")
 public class Person implements Serializable {
 
-//        @Id
+    //        @Id
 //    @GeneratedValue
     private Long id;
 
@@ -35,7 +35,6 @@ public class Person implements Serializable {
         this.age = age;
 
     }
-
 
     //    @Column(name = "username", nullable = true, length = 20)
 //    @Column(name = "age", nullable = true, length = 4)

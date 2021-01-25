@@ -1,16 +1,16 @@
 package com.arc.core.model.domain.system;
 
-import com.arc.core.model.BaseModel;
 import lombok.Data;
 
 import javax.validation.constraints.NotNull;
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
 /**
  * 系统角色表
  */
 @Data
-public class SysRole extends BaseModel {
+public class SysRole implements Serializable {
 
     private static final long serialVersionUID = 1L;
 

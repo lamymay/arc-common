@@ -2,6 +2,7 @@ package com.arc.core.model.domain.demo;
 
 import com.arc.core.enums.common.EnableEnum;
 import com.arc.core.enums.common.GenderEnum;
+import com.arc.core.model.domain.BaseModel;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -17,7 +18,7 @@ import java.time.LocalDateTime;
 @Setter
 @Getter
 @ToString
-public class DemoModel {
+public class DemoModel extends BaseModel {
 
     private Long id;//主键id
     private String name;//名称

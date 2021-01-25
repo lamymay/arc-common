@@ -1,6 +1,7 @@
 package com.arc.core.model.domain.mq;
 
 
+import com.arc.core.model.domain.BaseModel;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -10,7 +11,7 @@ import lombok.Setter;
  */
 @Setter
 @Getter
-public class RabbitConstants {
+public class RabbitConstants extends BaseModel {
 
     public static final String QUEUE = "queue-2";
     public static final String DIRECT_EXCHANGE = "direct_exchange";

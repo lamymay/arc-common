@@ -1,11 +1,11 @@
 package com.arc.core.model.domain.shop;
 
-import com.arc.core.model.BaseModel;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.*;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
 /**
@@ -20,7 +20,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @TableName("t_shopping_receipt")
-public class ShoppingReceipt extends BaseModel {
+public class ShoppingReceipt implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -58,7 +58,7 @@ public class ShoppingReceipt extends BaseModel {
 
     private String avatar;// 图片--二维码
 
-    private String consumerHoline;//客户热线
+    private String consumerHotline;//客户热线
 
     private LocalDateTime createTime;// 创建时间
     private LocalDateTime updateTime;// 更新时间

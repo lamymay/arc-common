@@ -1,12 +1,12 @@
 package com.arc.core.model.domain.system;
 
 
-import com.arc.core.model.BaseModel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
@@ -17,7 +17,7 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 @Deprecated
-public class SystemFile extends BaseModel {
+public class SystemFile implements Serializable {
 
     private static final long serialVersionUID = 1L;
 

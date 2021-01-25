@@ -1,11 +1,11 @@
 package com.arc.core.model.domain.shop;
 
-import com.arc.core.model.BaseModel;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.*;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
 /**
@@ -20,7 +20,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @TableName("t_shopping_commodity")
-public class ShoppingCommodity extends BaseModel {
+public class ShoppingCommodity implements Serializable {
 
     private static final long serialVersionUID = 1L;
 

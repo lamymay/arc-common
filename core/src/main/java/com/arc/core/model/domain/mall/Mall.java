@@ -1,5 +1,6 @@
 package com.arc.core.model.domain.mall;
 
+import com.arc.core.model.domain.BaseModel;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -10,7 +11,7 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-public class Mall {
+public class Mall extends BaseModel {
 
     private static final long serialVersionUID = 1L;
 

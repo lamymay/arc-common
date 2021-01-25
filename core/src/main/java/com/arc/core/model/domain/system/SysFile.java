@@ -1,10 +1,10 @@
 package com.arc.core.model.domain.system;
 
-import com.arc.core.model.BaseModel;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
@@ -13,7 +13,7 @@ import java.util.Date;
 @Getter
 @Setter
 @ToString
-public class SysFile extends BaseModel {
+public class SysFile implements Serializable {
 
     private static final long serialVersionUID = 1L;
 

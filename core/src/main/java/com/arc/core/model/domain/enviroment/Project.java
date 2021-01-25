@@ -1,5 +1,6 @@
 package com.arc.core.model.domain.enviroment;
 
+import com.arc.core.model.domain.BaseModel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -15,38 +16,38 @@ import lombok.ToString;
 @NoArgsConstructor
 //@Entity
 //@Table(name = "project_environment")
-public class Project {
+public class Project extends BaseModel {
 
     private static final long serialVersionUID = 1L;
 
 
-//    @Id
+    //    @Id
 //    @GeneratedValue
 //    @Column(name = "id")
     private Long id; // 主键
 
-//    @Column(name = "project_name",length = 255)
+    //    @Column(name = "project_name",length = 255)
     private String projectName; // 项目名称
 
-//    @Column(name = "project_number",length = 255)
+    //    @Column(name = "project_number",length = 255)
     private String projectNumber; // 项目编号
 
-//    @Column(name = "name",length = 255)
+    //    @Column(name = "name",length = 255)
     private String name; // 环境名称
 
-//    @Column(name = "source_url",length = 255)
+    //    @Column(name = "source_url",length = 255)
     private String sourceUrl; // 资源地址
 
-//    @Column(name = "source_username",length = 255)
+    //    @Column(name = "source_username",length = 255)
     private String sourceUsername; // 资源账号
 
-//    @Column(name = "source_password",length = 255)
+    //    @Column(name = "source_password",length = 255)
     private String sourcePassword; // 资源密码
 
-//    @Column(name = "source_driver",length = 255)
+    //    @Column(name = "source_driver",length = 255)
     private String sourceDriver; // 资源驱动
 
-//    @Column(name = "source_type",length = 255)
+    //    @Column(name = "source_type",length = 255)
     private String sourceType; // 数据类型（mysql、db2、MQ、Redis、）
 
     //Caused by: javax.persistence.PersistenceException: [PersistenceUnit: default] Unable to build Hibernate SessionFactory;
@@ -55,13 +56,13 @@ public class Project {
 //    private Object sourcePrimary; // 多数据源是区分 主从 用状态码标识
     private int sourcePrimary; // 多数据源是区分 主从与否 用状态码标识--修正之后的
 
-//    @Column(name = "source_port",length = 255)
+    //    @Column(name = "source_port",length = 255)
     private String sourcePort; // 资源端口
 
-//    @Column(name = "project_description",length = 255)
+    //    @Column(name = "project_description",length = 255)
     private String projectDescription; // 项目描述
 
-//    @Column(name = "project_action",length = 255)
+    //    @Column(name = "project_action",length = 255)
     private String projectAction; // 项目动作
 
     public String getSourcePrimary() {
