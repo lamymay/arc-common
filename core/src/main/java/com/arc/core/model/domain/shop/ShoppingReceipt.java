@@ -26,6 +26,8 @@ public class ShoppingReceipt implements Serializable {
 
     @TableId(value = "id", type = IdType.AUTO)
     private Long id;// 自增id
+    private LocalDateTime createTime;// 创建时间
+    private LocalDateTime updateTime;// 更新时间
     private LocalDateTime transactionTime;// 交易时间
 
     private String shopCode = "9696";// 店铺编码
@@ -60,8 +62,6 @@ public class ShoppingReceipt implements Serializable {
 
     private String consumerHotline;//客户热线
 
-    private LocalDateTime createTime;// 创建时间
-    private LocalDateTime updateTime;// 更新时间
 
 //    public float getTotalFinalPrice() {
 //        return (float) ((float) totalFinalPrice / 10000F);
